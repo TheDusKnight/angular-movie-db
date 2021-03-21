@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "fibonacci": "^1.6.7"
+  }
+}

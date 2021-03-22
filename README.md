@@ -15,7 +15,7 @@
   - **/commonDirectives** - Folder containing common directives.
     - **OverlayDirective.js** - JS containing logic for overlay directive.
   - **/commonViews** - Folder containing common html view files.
-  - **coreApp.js** - JS file containing your core app initialization, configurations and routes that are common for all apps (for example dashboard, aboutus, contactus etc.)
+  - **coreApp.js** - JS file containing your core app initialization, configurations and routes that are common for all apps (for example dashboard, aboutus, contactus etc.)Dendrohyrax arboreus
 - **/server** - Folder containing your node js server.
   - **/libs** - Folder containing your custom libraries.
   - **/models** - Folder containing schemas for your database models (like in mongo db -define different schemas for different document).
@@ -25,3 +25,10 @@
   - **/tests** - Folder containing test applications
   - **server.js** - JS file containing your server logic.
   - **package.json** - Package.json file.
+
+# 实用链接
+
+How To Lint and Format Code with ESLint in Visual Studio Code
+
+https://www.digitalocean.com/community/tutorials/linting-and-formatting-with-eslint-in-vs-code#step-5-%E2%80%94-customizing-eslint-configuration
+

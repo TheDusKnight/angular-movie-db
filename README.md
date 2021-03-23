@@ -1,42 +1,35 @@
-# CSCI571-HW8
+ [doc.md](doc.md) 
 
-## project structure
+key: `788c93d7dc54e946665b5958c8ff0a3a`
 
-- **/App** - Folder that Contains your angular js applications
-  - **/AppName** - Folder containing files related to specific application.
-    - /**contorllers** - Folder containing controllers related to specific app.
-      - **abcController.js** - JS file containing logic for abcController.
-    - **/directives** - Folder containing directives related to specific app.
-    - **/animations** - Folder containing animations related to specific app
-      **.** **.** **.**
-    - **/services** - Folder containing services related to specific app.
-    - **app.js** - JS file containing your routes handled by this app, application initialization and configs.
-    - **/views** - Folder containing html view files.
-  - **/commonDirectives** - Folder containing common directives.
-    - **OverlayDirective.js** - JS containing logic for overlay directive.
-  - **/commonViews** - Folder containing common html view files.
-  - **coreApp.js** - JS file containing your core app initialization, configurations and routes that are common for all apps (for example dashboard, aboutus, contactus etc.)Dendrohyrax arboreus
-- **/server** - Folder containing your node js server.
-  - **/libs** - Folder containing your custom libraries.
-  - **/models** - Folder containing schemas for your database models (like in mongo db -define different schemas for different document).
-  - **/routes** - Folder containing routes handled by node js server.
-  - **/plugins** - Folder containing your custom plugins (like database plugin, processRequest plugin etc.)
-  - **/spec** - Folder containing specifications.
-  - **/tests** - Folder containing test applications
-  - **server.js** - JS file containing your server logic.
-  - **package.json** - Package.json file.
+`npx nodemon server.js`
 
-# 实用链接
+Use axis with express: @923
 
-How To Lint and Format Code with ESLint in Visual Studio Code https://www.digitalocean.com/community/tutorials/linting-and-formatting-with-eslint-in-vs-code#step-5-%E2%80%94-customizing-eslint-configuration
+``` javascript
+url = 'https://api.themoviedb.org/3/search/multi?api_key=97588ddc4a26e3091152aa0c9a40de22&language=en-US&query=game';
 
-https://cloud.google.com/appengine/docs/standard/nodejs/
+// GET method route
 
-什么是单页面https://www.zhihu.com/question/51867068
+app.get('/', function(req, res) {
 
-Express 应用程序生成器https://expressjs.com/zh-cn/starter/generator.html
+ axios.get(url)
 
-[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+ .then(response => {
 
-TypeScript lint https://ts.xcatliu.com/engineering/lint.html
+ // console.log(response)
 
+ res.json(response.data);
+
+ })
+
+ .catch(error => {
+
+ console.log(error)
+
+ })
+
+})
+```
+
+for 4.1.5, 4.1.3, 4.1.2, 4.1.14, etc..., ignore movies that don't have backdrop_path

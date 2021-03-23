@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, papa').end();
+  res.status(200).send('Hello, papa gog').end();
 });
 app.get('/submit', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/form.html'));

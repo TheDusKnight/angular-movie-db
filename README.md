@@ -36,3 +36,7 @@ https://cloud.google.com/appengine/docs/standard/nodejs/
 
 Express 应用程序生成器https://expressjs.com/zh-cn/starter/generator.html
 
+[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+
+TypeScript lint https://ts.xcatliu.com/engineering/lint.html
+

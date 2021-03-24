@@ -7,7 +7,7 @@ key: `788c93d7dc54e946665b5958c8ff0a3a`
 Use axis with express: @923
 
 ``` javascript
-url = 'https://api.themoviedb.org/3/search/multi?api_key=97588ddc4a26e3091152aa0c9a40de22&language=en-US&query=game';
+url = 'https://api.themoviedb.org/3/search/multi?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&query=game';
 
 // GET method route
 

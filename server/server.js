@@ -24,8 +24,8 @@ app.get('/search/multi/:movie', (req, res) => {
     response.data.results.forEach((result) => {
       if (result.backdrop_path != null && (result.media_type === 'movie' || result.media_type === 'tv')) {
         const data = {
-          id: result.id,
-          name: result.name || result.title,
+          id: result.id || null,
+          name: result.name || result.title || null,
           backdrop_path: `https://image.tmdb.org/t/p/w500${result.backdrop_path}`,
           media_type: result.media_type,
         };
@@ -36,6 +36,7 @@ app.get('/search/multi/:movie', (req, res) => {
         console.log(`${result.id} invalid search multi`);
       }
     });
+    o.total = o[key].length;
     res.json(o);
   }).catch((error) => {
     console.log(error);
@@ -50,8 +51,8 @@ app.get('/trend/movie', (req, res) => {
     response.data.results.forEach((result) => {
       if (result.poster_path != null) {
         const data = {
-          id: result.id,
-          name: result.title,
+          id: result.id || null,
+          name: result.title || null,
           poster_path: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
         };
         if (o[key].length < 20) {
@@ -61,6 +62,7 @@ app.get('/trend/movie', (req, res) => {
         console.log(`${result.id} invalid trend movie`);
       }
     });
+    o.total = o[key].length;
     res.json(o);
   }).catch((error) => {
     console.log(error);

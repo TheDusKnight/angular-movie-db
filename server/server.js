@@ -7,7 +7,32 @@ const axios = require('axios').default;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
-
+function noQuery(url, res) {
+  axios.get(url).then((response) => {
+    const o = {};
+    const key = 'results';
+    o[key] = [];
+    response.data.results.forEach((result) => {
+      if (result.poster_path != null) {
+        const data = {
+          id: result.id || null,
+          name: result.title || null,
+          poster_path: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+        };
+        if (o[key].length < 20) {
+          o[key].push(data);
+        }
+      } else {
+        console.log(`${result.id} invalid trend movie`);
+      }
+    });
+    o.total = o[key].length;
+    // console.log(o);
+    res.json(o);
+  }).catch((error) => {
+    console.log(error);
+  });
+}
 app.get('/', (req, res) => {
   res.status(200).send('Hello, papa gog').end();
 });
@@ -68,6 +93,36 @@ app.get('/trend/movie', (req, res) => {
     console.log(error);
   });
 });
+app.get('/trend/tv', (req, res) => {
+  const url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=788c93d7dc54e946665b5958c8ff0a3a';
+  axios.get(url).then((response) => {
+    const o = {};
+    const key = 'results';
+    o[key] = [];
+    response.data.results.forEach((result) => {
+      if (result.poster_path != null) {
+        const data = {
+          id: result.id || null,
+          name: result.name || null,
+          poster_path: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+        };
+        if (o[key].length < 20) {
+          o[key].push(data);
+        }
+      } else {
+        console.log(`${result.id} invalid trend movie`);
+      }
+    });
+    o.total = o[key].length;
+    res.json(o);
+  }).catch((error) => {
+    console.log(error);
+  });
+});
+app.get('/top/movie', (req, res) => {
+  const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1';
+  noQuery(url, res);
+});
 app.get('/submit', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/form.html'));
 });
@@ -85,5 +140,7 @@ app.listen(PORT, () => {
   console.log('Press Ctrl+C to quit.');
 });
 // [END gae_node_request_example]
+
+// define functions
 
 module.exports = app;

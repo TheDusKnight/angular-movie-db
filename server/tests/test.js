@@ -1,14 +1,9 @@
 // const msg = 'Hello World';
 // console.log(msg);
-
-function b() {
-  const hello = 'Hello';
-  return hello;
+function greeting(person) {
+  const name = person ? person.name : 'stranger';
+  return `Howdy, ${name}`;
 }
 
-function a() {
-  const state = b();
-  console.log(state);
-}
-
-a();
+console.log(greeting({ name: 'Alice' })); // "Howdy, Alice"
+console.log(greeting(undefined)); // "Howdy, stranger"

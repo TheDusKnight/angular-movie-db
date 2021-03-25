@@ -114,30 +114,51 @@ function getReview(url, res) {
     const key = 'results';
     o[key] = [];
     response.data.results.forEach((result) => {
-      // const avatarPath = () => {
-      //   if (result.author_details.avatar_path && result.author_details.avatar_path !== null) {
-      //     const tmp = result.author_details.avatar_path;
-      //     if (tmp.slice(0, 5) === '/http') {
-      //       return tmp.slice(1);
-      //     }
-      //     return `https://image.tmdb.org/t/p/original${tmp}`;
-      //   }
-      //   return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHnPmUvFLjjmoYWAbLTEmLLIRCPpV_OgxCVA&usqp=CAU';
-      // };
-      const data = {
-        author: result.author || null,
-        content: result.content || null,
-        created_at: result.created_at || null,
-        url: result.url || null,
-        // TODO: add https://image.tmdb.org/t/p/original if necessary in frontend, /没有http，或者/http开头
-        rating: result.author_details.rating ? result.author_details.rating : 0,
-        avatar_path: result.author_details.avatar_path ? result.author_details.avatar_path
-          : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHnPmUvFLjjmoYWAbLTEmLLIRCPpV_OgxCVA&usqp=CAU',
-        // avatar_path: result.author_details.avatar_path ? ((result.author_details.avatar_path.slice(0, 5) === '/http' ? result.author_details.avatar_path.slice(1) : `https://image.tmdb.org/t/p/original${result.author_details.avatar_path}`)
-        // : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHnPmUvFLjjmoYWAbLTEmLLIRCPpV_OgxCVA&usqp=CAU'),
-        // avatar_path: avatarPath,
-      };
-      if (o[key].length < 10) {
+      if (result.author_details != null) {
+        const avatarPath = () => {
+          if (result.author_details.avatar_path != null) {
+            const tmp = result.author_details.avatar_path;
+            if (tmp.slice(0, 5) === '/http') {
+              return tmp.slice(1);
+            }
+            return `https://image.tmdb.org/t/p/original${tmp}`;
+          }
+          return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHnPmUvFLjjmoYWAbLTEmLLIRCPpV_OgxCVA&usqp=CAU';
+        };
+        const data = {
+          author: result.author || null,
+          content: result.content ? result.content.replace(/(\r\n|\n|\r)/gm, '') : null,
+          created_at: result.created_at || null,
+          url: result.url || null,
+          rating: result.author_details.rating ? result.author_details.rating : 0,
+          // avatar_path: result.author_details.avatar_path ? result.author_details.avatar_path
+          // : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHnPmUvFLjjmoYWAbLTEmLLIRCPpV_OgxCVA&usqp=CAU',
+          avatar_path: avatarPath(),
+        };
+        if (o[key].length < 10) {
+          o[key].push(data);
+        }
+      }
+    });
+    o.total = o[key].length;
+    res.json(o);
+  }).catch((error) => {
+    console.log(error);
+  });
+}
+function getCast(url, res) {
+  axios.get(url).then((response) => {
+    const o = {};
+    const key = 'results';
+    o[key] = [];
+    response.data.cast.forEach((result) => {
+      if (result.profile_path != null) {
+        const data = {
+          id: result.id || null,
+          name: result.name || null,
+          character: result.character || null,
+          profile_path: `https://image.tmdb.org/t/p/w500/${result.profile_path}` || null,
+        };
         o[key].push(data);
       }
     });
@@ -147,20 +168,43 @@ function getReview(url, res) {
     console.log(error);
   });
 }
-// TODO: cast
-function getCast(url, res) {
+function getCastDetail(url, res) {
   axios.get(url).then((response) => {
+    console.log(response);
     const o = {};
     const key = 'results';
     o[key] = [];
-    response.data.results.forEach((result) => {
-      const data = {
-
-      };
-      if (o[key].length < 10) {
-        o[key].push(data);
-      }
-    });
+    const result = response.data;
+    const data = {
+      birthday: result.birthday || null,
+      gender: result.gender || null,
+      name: result.name || null,
+      homepage: result.homepage || null,
+      also_known_as: result.also_known_as || null,
+      known_for_department: result.known_for_department || null,
+      biography: result.biography ? result.biography.replace(/(\r\n|\n|\r)/gm, '') : null,
+    };
+    o[key].push(data);
+    o.total = o[key].length;
+    res.json(o);
+  }).catch((error) => {
+    console.log(error);
+  });
+}
+function getCastExternal(url, res) {
+  axios.get(url).then((response) => {
+    console.log(response);
+    const o = {};
+    const key = 'results';
+    o[key] = [];
+    const result = response.data;
+    const data = {
+      imdb_id: result.imdb_id ? `imdb.com/name/${result.imdb_id}` : null,
+      facebook_id: result.facebook_id ? `facebook.com/${result.facebook_id}` : null,
+      instagram_id: result.instagram_id ? `instagram.com/${result.instagram_id}` : null,
+      twitter_id: result.twitter_id ? `twitter.com/${result.twitter_id}` : null,
+    };
+    o[key].push(data);
     o.total = o[key].length;
     res.json(o);
   }).catch((error) => {
@@ -300,6 +344,26 @@ app.get('/tv/review/:id', (req, res) => {
   const { id } = req.params;
   const url = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
   getReview(url, res);
+});
+app.get('/movie/cast/:id', (req, res) => {
+  const { id } = req.params;
+  const url = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
+  getCast(url, res);
+});
+app.get('/tv/cast/:id', (req, res) => {
+  const { id } = req.params;
+  const url = `https://api.themoviedb.org/3/tv/${id}/credits?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
+  getCast(url, res);
+});
+app.get('/cast/detail/:id', (req, res) => {
+  const { id } = req.params;
+  const url = `https://api.themoviedb.org/3/person/${id}?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
+  getCastDetail(url, res);
+});
+app.get('/cast/external/:id', (req, res) => {
+  const { id } = req.params;
+  const url = `https://api.themoviedb.org/3/person/${id}/external_ids?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
+  getCastExternal(url, res);
 });
 app.get('/submit', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/form.html'));

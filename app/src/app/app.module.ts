@@ -5,14 +5,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarouselPauseComponent } from './carousel-pause/carousel-pause.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { CollapseNavbarComponent } from './collapse-navbar/collapse-navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopBarComponent,
-    CarouselPauseComponent
+    CarouselPauseComponent,
+    CollapseNavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -4,8 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarouseCardComponent } from './components/carouse-card/carouse-card.component';
 import { CarouselPauseComponent } from './components/carousel-pause/carousel-pause.component';
 import { CollapseNavbarComponent } from './components/collapse-navbar/collapse-navbar.component';
+import { DetailpageComponent } from './components/detailpage/detailpage.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MylistpageComponent } from './components/mylistpage/mylistpage.component';
 
@@ -16,7 +18,9 @@ import { MylistpageComponent } from './components/mylistpage/mylistpage.componen
     CarouselPauseComponent,
     CollapseNavbarComponent,
     HomepageComponent,
-    MylistpageComponent
+    MylistpageComponent,
+    DetailpageComponent,
+    CarouseCardComponent
   ],
   imports: [
     BrowserModule,

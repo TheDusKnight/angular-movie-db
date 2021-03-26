@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
+  public message: string = "Passing the message from homepage";
+
   constructor() { }
 
   ngOnInit(): void {

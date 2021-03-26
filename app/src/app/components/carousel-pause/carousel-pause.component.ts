@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carousel-pause',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-pause.component.css']
 })
 export class CarouselPauseComponent implements OnInit {
+  @Input() messageReceived:String = "Default message"
 
   constructor() { }
 

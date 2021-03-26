@@ -11,8 +11,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselPauseComponent,
-    TopBarComponent
+    TopBarComponent,
+    CarouselPauseComponent
   ],
   imports: [
     BrowserModule,

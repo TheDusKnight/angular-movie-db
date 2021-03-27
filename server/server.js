@@ -2,9 +2,11 @@
 const bodyParser = require('body-parser');
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios').default;
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
 function noQuery(url, res) {

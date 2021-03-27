@@ -90,7 +90,8 @@ function getDetail(url, res) {
       spoken_languages: language,
       // eslint-disable-next-line max-len
       release_date: result.release_date || result.first_air_date || null, // TODO: check list or null
-      runtime: result.runtime || (result.episode_run_time ? result.episode_run_time[0] : null), // TODO: check list or null
+      // check list or null
+      runtime: result.runtime || (result.episode_run_time ? result.episode_run_time[0] : null),
       overview: result.overview || null,
       vote_average: result.vote_average || null,
       tagline: result.tagline || null,

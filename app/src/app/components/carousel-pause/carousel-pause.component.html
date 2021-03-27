@@ -2,5 +2,6 @@
 {{messageReceived}}
 <!-- {{currentPlayings}} -->
 <div *ngFor="let currentPlaying of currentPlayings">
-  {{currentPlaying.id}}
+  <!-- {{currentPlaying.id}} -->
+  <a [routerLink]="['watch/movie/', currentPlaying.id]">{{currentPlaying.id}}</a>
 </div>

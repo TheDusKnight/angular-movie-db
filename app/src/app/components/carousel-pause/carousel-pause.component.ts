@@ -10,7 +10,6 @@ export class CarouselPauseComponent implements OnInit {
   @Input() messageReceived:String = "Default message from carousel-pause";
   public currentPlayings: object = {};
   // public currentPlayings: any;
-  
 
   constructor(private carouselService: CarouselService) { }
 

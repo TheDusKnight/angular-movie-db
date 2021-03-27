@@ -21,7 +21,7 @@ import { MylistpageComponent } from './components/mylistpage/mylistpage.componen
     HomepageComponent,
     MylistpageComponent,
     DetailpageComponent,
-    CarouseCardComponent
+    CarouseCardComponent,
   ],
   imports: [
     BrowserModule,

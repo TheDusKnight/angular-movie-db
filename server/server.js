@@ -275,7 +275,7 @@ app.get('/current/movie', (req, res) => {
         const data = {
           id: result.id || null,
           name: result.title,
-          backdrop_path: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+          backdrop_path: `https://image.tmdb.org/t/p/w500${result.backdrop_path}`,
         };
         if (o[key].length < 5) {
           o[key].push(data);

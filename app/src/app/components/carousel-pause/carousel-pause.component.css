@@ -1,0 +1,23 @@
+img {
+  /* position: relative; */
+  /* top: 2000px; */
+  /* display: block; */
+  width: 100%;
+  /* height: auto; */
+  /* height: 30%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
+  /* max-height: 200px; */
+  /* overflow: hidden; */
+  /* TODO: object-fit none似乎可以改变箭头的位置 */
+  /* object-fit: none; */
+  object-fit: cover;
+  object-position: top;
+  /* object-position: 60% 30%; */
+}
+
+ngb-carousel {
+  width: 60%;
+}
+

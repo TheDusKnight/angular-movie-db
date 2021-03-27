@@ -1,7 +1,21 @@
 <p>carousel-pause works!</p>
 {{messageReceived}}
 <!-- {{currentPlayings}} -->
-<div *ngFor="let currentPlaying of currentPlayings">
-  <!-- {{currentPlaying.id}} -->
+
+<!-- <div *ngFor="let currentPlaying of currentPlayings">
   <a [routerLink]="['watch/movie/', currentPlaying.id]">{{currentPlaying.id}}</a>
+</div> -->
+<div class="my-container mx-sm-5">
+  <ngb-carousel #carousel [interval]="5000000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">
+      <div class="carousel-caption">
+        <h3>{{currentPlaying.name}}</h3>
+      </div>
+      <a [routerLink]="['watch/movie/', currentPlaying.id]">
+        <div class="picsum-img-wrapper">
+          <img [src]="currentPlaying.backdrop_path" alt="My image {{i + 1}} description">
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
 </div>

@@ -6,6 +6,7 @@
   <a [routerLink]="['watch/movie/', currentPlaying.id]">{{currentPlaying.id}}</a>
 </div> -->
 <!-- TODO: mx-sm-5 -->
+<!-- TOOD: 设置small device自动显示标题和隐藏indicates-->
 <div class="my-container">
   <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
     (slide)="onSlide($event)">

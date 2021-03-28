@@ -8,7 +8,7 @@
 <!-- TODO: mx-sm-5 -->
 <!-- TOOD: 设置small device自动显示标题和隐藏indicates-->
 <div class="my-container">
-  <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+  <ngb-carousel #carousel [interval]="5000" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
     (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">
       <a [routerLink]="['watch/movie/', currentPlaying.id]">
@@ -22,4 +22,8 @@
       </a>
     </ng-template>
   </ngb-carousel>
+</div>
+<div class="btn-group" role="group" aria-label="Carousel toggle controls">
+  <button type="button" (click)="showNavigationArrows = !showNavigationArrows" class="btn btn-outline-dark btn-sm">Toggle navigation arrows</button>
+  <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Toggle navigation indicators</button>
 </div>

@@ -1,3 +1,4 @@
+import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +29,7 @@ import { MylistpageComponent } from './components/mylistpage/mylistpage.componen
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
+    LayoutModule,
     FormsModule,
   ],
   providers: [],

@@ -1,26 +1,38 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { NgbCarousel, NgbCarouselConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselService } from '../../services/carousel.service';
 
 @Component({
   selector: 'app-carousel-pause',
   templateUrl: './carousel-pause.component.html',
-  styleUrls: ['./carousel-pause.component.css']
+  styleUrls: ['./carousel-pause.component.css'],
+  providers: [NgbCarouselConfig]
 })
-export class CarouselPauseComponent implements OnInit {
+export class CarouselPauseComponent implements OnInit, OnChanges{
   @Input() messageReceived:String = "Default message from carousel-pause";
-  public currentPlayings: object = {};
-  // public currentPlayings: any;
+  // public currentPlayings: object = {};
+  public currentPlayings: any; // TODO: whay object doesn't work?
 
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
   pauseOnHover = true;
   pauseOnFocus = true;
+  @Input() showNavigationArrows:boolean = false;
+  @Input() showNavigationIndicators:boolean = false;
 
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
+  // constructor(private carouselService: CarouselService, config: NgbCarouselConfig) {
+  //   config.showNavigationArrows = true;
+  //   config.showNavigationIndicators = true;
+  // }
   constructor(private carouselService: CarouselService) { }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    // throw new Error('Method not implemented.');
+    
+  }
 
   ngOnInit(): void {
     this.fetchCarousel();

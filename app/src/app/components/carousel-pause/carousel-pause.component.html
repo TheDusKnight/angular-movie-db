@@ -5,9 +5,7 @@
 <!-- <div *ngFor="let currentPlaying of currentPlayings">
   <a [routerLink]="['watch/movie/', currentPlaying.id]">{{currentPlaying.id}}</a>
 </div> -->
-<!-- TODO: mx-sm-5 -->
-<!-- TOOD: 设置small device自动显示标题和隐藏indicates-->
-<div class="my-container">
+<div class="my-container mx-sm-0 mx-md-1 mx-lg-3 mx-xl-5">
   <ngb-carousel #carousel [interval]="5000" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
     (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">

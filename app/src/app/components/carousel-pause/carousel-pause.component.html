@@ -5,17 +5,18 @@
 <!-- <div *ngFor="let currentPlaying of currentPlayings">
   <a [routerLink]="['watch/movie/', currentPlaying.id]">{{currentPlaying.id}}</a>
 </div> -->
-<div class="my-container mx-sm-5">
-  <ngb-carousel #carousel [interval]="5000000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+<!-- TODO: mx-sm-5 -->
+<div class="my-container">
+  <ngb-carousel #carousel [interval]="500000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">
-      <div class="carousel-caption">
-        <h3>{{currentPlaying.name}}</h3>
-      </div>
-      <a [routerLink]="['watch/movie/', currentPlaying.id]">
-        <div class="picsum-img-wrapper">
-          <img [src]="currentPlaying.backdrop_path" alt="My image {{i + 1}} description">
+      <div class="my-div">
+        <div class="carousel-caption">
+          <p>{{currentPlaying.name}}<p>
         </div>
-      </a>
+        <a [routerLink]="['watch/movie/', currentPlaying.id]">
+          <img [src]="currentPlaying.backdrop_path" alt="My image {{i + 1}} description">
+        </a>
+      </div>
     </ng-template>
   </ngb-carousel>
 </div>

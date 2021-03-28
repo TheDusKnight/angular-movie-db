@@ -1,10 +1,22 @@
-img {
+/* img.resize {
+  width: 50%;
+  height: auto;
+} */
+
+ img {
   /* position: relative; */
-  /* top: 2000px; */
-  /* display: block; */
+  /* top: 60px; */
   width: 100%;
   /* height: auto; */
-  /* height: 30%; */
+  /* overflow: hidden; */
+  /* margin-top: 100px; */
+  /* padding-top: 100px; */
+  /* display: block; */
+  /* width: auto; */
+  /* max-height: 100px; */
+  /* max-width: 500px; */
+  /* margin: 0 auto; */
+  /* height: 240px; */
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: flex-start; */
@@ -12,12 +24,91 @@ img {
   /* overflow: hidden; */
   /* TODO: object-fit none似乎可以改变箭头的位置 */
   /* object-fit: none; */
-  object-fit: cover;
-  object-position: top;
+  /* object-fit: cover; */
+  /* object-position: top; */
   /* object-position: 60% 30%; */
 }
 
-ngb-carousel {
-  width: 60%;
+::ng-deep ngb-carousel {
+  /* position: absolute; */
+  /* top: 0px; */
+  /* margin-top: 100px; */
+  /* padding-top: 600px; */
+  /* text-align: center; */
+  /* overflow: hidden; */
+  /* width: 70%; */
+  /* height: 200px; */
 }
 
+/* ngb-carousel:hover img {
+  transform: scale(1.05);
+  opacity: 0.5;
+} */
+
+/* background: linear-gradient(rgba(0, 0, 0,)) */
+/* .my-container:hover {
+  transform: scale(1.05);
+} */
+
+.my-div {
+  /* position: relative; */
+  /* display: inline-block; */
+}
+
+.my-div:hover:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: linear-gradient(to bottom, rgba(0,47,75,0.0) 0%,rgba(0, 0, 0, 1) 100%);
+}
+
+.my-div p {
+  display: none;
+}
+
+.my-div img {
+  transition: .2s ease;
+}
+
+.my-div:hover {
+  /* background-image: black; */
+  /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,0), rgba(0,0,0,1)); */
+}
+
+.my-div::after {
+  /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,0), rgba(0,0,0,1)); */
+}
+
+.my-div:hover img {
+  display: block;
+  transform: scale(1.05);
+  /* opacity: 0.0; */
+  transition: .3s ease;
+}
+
+.my-div:hover p {
+  /* opacity: 1; */
+  display: block;
+}
+
+/* my-container:hover {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0), rgba(255,0,0,0), rgba(255,0,0,0), rgba(173,37,30,1));
+} */
+
+.carousel-caption {
+  /* width: 100%;
+  height: auto; */
+  /* font-size: 2vw; */
+  /* display: none; */
+  /* opacity: 0; */
+  /* margin-left: -60%; */
+  /* margin-bottom: 0%; */
+  /* background-color: black; */
+  /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0), rgba(255,0,0,0), rgba(255,0,0,0), rgba(173,37,30,1)); */
+}
+
+/* .carousel-caption:hover p {
+  display: none;
+} */

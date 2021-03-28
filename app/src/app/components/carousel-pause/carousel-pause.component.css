@@ -50,6 +50,10 @@
   transform: scale(1.05);
 } */
 
+.hold-title {
+
+}
+
 /* https://dev.to/ellen_dev/two-ways-to-achieve-an-image-colour-overlay-with-css-eio */
 .my-div:hover:after {
   content:'';
@@ -57,7 +61,6 @@
   left:0; bottom:0;
   width:100%; height:100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 1));
-  /* background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 1)); */
 }
 
 .my-div p {
@@ -69,15 +72,32 @@
 }
 
 .my-div:hover img {
-  display: block;
+  /* display: block; */
   transform: scale(1.05);
-  /* opacity: 0.0; */
   transition: .3s ease;
 }
 
 .my-div:hover p {
   /* opacity: 1; */
   display: block;
+}
+
+.hold-div:after {
+  content:'';
+  position:absolute;
+  left:0; bottom:0;
+  width:100%; height:100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 1));
+}
+
+.hold-div img {
+  transition: .2s ease;
+}
+
+.hold-div:hover img {
+  /* display: block; */
+  transform: scale(1.05);
+  transition: .3s ease;
 }
 
 /* my-container:hover {

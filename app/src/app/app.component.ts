@@ -21,22 +21,22 @@ export class AppComponent implements OnInit {
       Breakpoints.XLarge // large desktops, 1200px and up
     ]).subscribe( (state: BreakpointState) => {
       if (state.breakpoints[Breakpoints.XSmall]) {
-           console.log( 'Matches XSmall viewport');
+          //  console.log( 'Matches XSmall viewport');
           //  this.htmlStyles = "dummy1";
       }
       if (state.breakpoints[Breakpoints.Small]) {
-           console.log( 'Matches Small viewport');
+          //  console.log( 'Matches Small viewport');
       }
       if (state.breakpoints[Breakpoints.Medium]) {
-           console.log( 'Matches Medium  viewport');
+          //  console.log( 'Matches Medium  viewport');
       }
       if (state.breakpoints[Breakpoints.Large]) {
 
-          console.log( 'Matches Large viewport');
+          // console.log( 'Matches Large viewport');
       }
       if (state.breakpoints[Breakpoints.XLarge]) {
 
-         console.log( 'Matches XLarge viewport');   
+        //  console.log( 'Matches XLarge viewport');   
       }
     });
   }

@@ -12,6 +12,7 @@ import { CollapseNavbarComponent } from './components/collapse-navbar/collapse-n
 import { DetailpageComponent } from './components/detailpage/detailpage.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MylistpageComponent } from './components/mylistpage/mylistpage.component';
+import { BreakpointComponent } from './components/breakpoint/breakpoint.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MylistpageComponent } from './components/mylistpage/mylistpage.componen
     MylistpageComponent,
     DetailpageComponent,
     CarouseCardComponent,
+    BreakpointComponent,
   ],
   imports: [
     BrowserModule,

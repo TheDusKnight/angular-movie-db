@@ -1,5 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 html,body{
   color: white;
-  background-color: rgba(6,12,46)
+  background-color: rgba(6,12,46);
+  font-size: 0.8rem;
 }
+
+/* @include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+} */
+
+/* @media(min-width: 1920px)
+{
+  html{
+    font-size:1.6rem;
+  }
+}
+
+@media(min-width: 1280px)
+{
+  html{
+    font-size:1.4rem;
+  }
+}
+
+@media(min-width: 960px)
+{
+  html{
+    font-size:1.2rem;
+  }
+} */
+
+/* If more than 600px */
+@media(min-width: 600px)
+{
+  html{
+    font-size:1.1rem;
+  }
+}
+/* @media(min-width: 960px)
+{
+  html{
+    font-size:1.4rem;
+  }
+} */

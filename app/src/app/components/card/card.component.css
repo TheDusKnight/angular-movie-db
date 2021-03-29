@@ -12,24 +12,40 @@
   transition: .3s ease;
 } */
 
-.my-div:hover {
+
+.card-body:hover .my-div {
   transform: scale(1.05);
   transition: .3s ease;
 }
 
-.my-div:hover 
+.card-body:hover p {
+  /* transform: scale(1.05); */
+  /* transition: .3s ease; */
+}
 
 .card-text {
   /* font-size: 1vw; */
-  font-size: 100%;
-  position: absolute;
-  bottom: 5%;
+  /* font-size: 100%; */
+  /* position: relative; */
+  /* bottom: 5%; */
+  top: 0%;
+  /* bottom: 10%; */
 }
 
-.my-div:hover:after {
-  content:'';
+.card-body:hover .my-div:after {
+  /* content:'hello'; */
+  content: attr(title);
+  /* align-content: bottom; */
+  /* text-align: bottom; */
   position:absolute;
-  left:0; bottom:0;
+  /* position:relative; */
+  /* display: inline-block; */
+  /* margin-bottom: 0; */
+  left:0%;
+  padding-left: 10%;
+  padding-top: 130%;
+  /* bottom: 50%; */
+  /* margin-top: 200px; */
   width:100%; height:100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 1));
 }

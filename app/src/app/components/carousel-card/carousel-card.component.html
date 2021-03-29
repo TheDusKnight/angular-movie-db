@@ -11,7 +11,7 @@
 <!-- <app-card></app-card> -->
 
 
-<ngb-carousel *ngIf="small" [interval]="false" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="false">
+<ngb-carousel *ngIf="small" [interval]="false" [showNavigationArrows]="true" [showNavigationIndicators]="false">
   <ng-template ngbSlide *ngFor="let card of cards">
         <app-card [cardInfo]="card"></app-card>
   </ng-template>

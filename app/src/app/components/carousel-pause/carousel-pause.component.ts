@@ -14,7 +14,7 @@ export class CarouselPauseComponent implements OnInit, OnChanges {
   // public currentPlayings: object = {};
   public currentPlayings: any; // TODO: why object doesn't work?
 
-  breakpoint: any;
+  // breakpoint: any;
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;

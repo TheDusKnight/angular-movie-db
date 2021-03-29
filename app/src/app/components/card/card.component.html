@@ -1,31 +1,16 @@
 <p>card works!</p>
-<div class="card-deck">
-  <a [routerLink]="['watch/movie/', cardInfo.id]">
-    <div class="card text-white" style="max-width: 15rem;">
-      <!-- I have to remove card-body with no choose -->
-      <!-- <div class="card-body"> -->
-        <div class="my-div" title={{cardInfo.name}}>
-          <img class="card-img-top center-block" src="{{cardInfo.poster_path}}" alt="Card image cap">
-        </div>
-  
-        <!-- <div class="card-img-overlay">
-          <p class="card-text">{{cardInfo.name}}</p>
-        </div> -->
-      <!-- </div> -->
-    </div>
-  </a>
-  <a [routerLink]="['watch/movie/', cardInfo.id]">
-    <div class="card text-white" style="max-width: 15rem;">
-      <!-- I have to remove card-body with no choose -->
-      <!-- <div class="card-body"> -->
-        <div class="my-div" title={{cardInfo.name}}>
-          <img class="card-img-top center-block" src="{{cardInfo.poster_path}}" alt="Card image cap">
-        </div>
-  
-        <!-- <div class="card-img-overlay">
-          <p class="card-text">{{cardInfo.name}}</p>
-        </div> -->
-      <!-- </div> -->
-    </div>
-  </a>
-</div>
+  <!-- <div class="card-deck"> -->
+    <a [routerLink]="['watch/movie/', cardInfo.id]">
+      <div class="card text-white" style="max-width: 15rem;">
+        <!-- I have to remove card-body with no choose -->
+        <!-- <div class="card-body"> -->
+          <div class="my-div" title={{cardInfo.name}}>
+            <img class="card-img-top center-block" src="{{cardInfo.poster_path}}" alt="Card image cap">
+          </div>
+          <!-- <div class="card-img-overlay">
+            <p class="card-text">{{cardInfo.name}}</p>
+          </div> -->
+        <!-- </div> -->
+      </div>
+    </a>
+  <!-- </div> -->

@@ -10,7 +10,7 @@ import { CarouselService } from '../../services/carousel.service';
   providers: [NgbCarouselConfig],
 })
 export class CarouselCardComponent implements OnInit {
-  public small:boolean = false;
+  public small: boolean = false;
   public cards: any;
 
   showNavigationArrows: boolean = true;
@@ -19,7 +19,7 @@ export class CarouselCardComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private carouselService: CarouselService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.fetchCarousel();
@@ -29,11 +29,13 @@ export class CarouselCardComponent implements OnInit {
       if (state.matches) {
         console.log('Matches X small viewport')
         this.small = true;
+      } else {
+        this.small = false;
       }
     })
   }
 
-  fetchCarousel(){
+  fetchCarousel() {
     this.carouselService.getPopMovie().subscribe(result => {
       this.cards = result['results'];
     });

@@ -2,7 +2,7 @@
 html,body{
   color: white;
   background-color: rgba(6,12,46);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 /* @include media-breakpoint-up(sm) {
@@ -48,7 +48,7 @@ html,body{
 @media(min-width: 600px)
 {
   html{
-    font-size:1.1rem;
+    font-size:1.2rem;
   }
 }
 /* @media(min-width: 960px)

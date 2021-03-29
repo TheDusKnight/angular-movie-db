@@ -60,7 +60,7 @@
   background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 1));
 }
 
-.my-div p {
+.my-div h6 {
   display: none;
 }
 
@@ -74,7 +74,7 @@
   transition: .3s ease;
 }
 
-.my-div:hover p {
+.my-div:hover h6 {
   /* opacity: 1; */
   display: block;
 }

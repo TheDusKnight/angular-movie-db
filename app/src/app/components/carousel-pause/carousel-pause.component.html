@@ -12,8 +12,8 @@
       <a [routerLink]="['watch/movie/', currentPlaying.id]">
         <div *ngIf="showNavigationIndicators" class="my-div">
           <div class="carousel-caption">
-            <p>{{currentPlaying.name}}
-            <p>
+            <h6>{{currentPlaying.name}}
+            </h6>
           </div>
           <img [src]="currentPlaying.backdrop_path" alt="My image {{i + 1}} description">
         </div>

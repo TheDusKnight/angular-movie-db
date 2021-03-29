@@ -1,5 +1,7 @@
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselService } from '../../services/carousel.service';
 
 @Component({
   selector: 'app-carousel-card',
@@ -8,13 +10,31 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbCarouselConfig],
 })
 export class CarouselCardComponent implements OnInit {
+  @Input() which: string = '';
+  public popMovie: any;
 
-  constructor() { }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private carouselService: CarouselService,
+    ) { }
 
   ngOnInit(): void {
+    this.fetchCarousel();
+    this.breakpointObserver.observe([
+      Breakpoints.XSmall
+    ]).subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        console.log('Matches X small viewport')
+        this.which = 'XSmall';
+      }
+    })
   }
 
-  @Input() which: string = '';
+  fetchCarousel(){
+    this.carouselService.getPopMovie().subscribe(result => {
+      this.popMovie = result['results'];
+    });
+  }
 
 
 }

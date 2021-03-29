@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-carousel-card',
   templateUrl: './carousel-card.component.html',
-  styleUrls: ['./carousel-card.component.css']
+  styleUrls: ['./carousel-card.component.css'],
+  providers: [NgbCarouselConfig],
 })
 export class CarouselCardComponent implements OnInit {
 
@@ -11,5 +13,8 @@ export class CarouselCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input() which: string = '';
+
 
 }

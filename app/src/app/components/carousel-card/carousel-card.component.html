@@ -1,15 +1,28 @@
 <p>carousel-card works!</p>
 <!-- {{popMovie}} -->
+<!-- <div class="card-deck">
+<app-card></app-card>
+<app-card></app-card>
+<app-card></app-card>
+<app-card></app-card>
+<app-card></app-card>
+<app-card></app-card>
+</div> -->
 <!-- <app-card></app-card> -->
 
 
-<ngb-carousel *ngIf="small" [interval]="false" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="!showNavigationIndicators">
+<ngb-carousel *ngIf="small" [interval]="false" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="false">
   <ng-template ngbSlide *ngFor="let card of cards">
-    <!-- <div class="picsum-img-wrapper"> -->
-      <!-- <div class="card-decks"> -->
-        <!-- <img [src]="card.poster_path" alt="Random slide"> -->
         <app-card [cardInfo]="card"></app-card>
-      <!-- </div> -->
-    <!-- </div> -->
+  </ng-template>
+</ngb-carousel>
+
+<ngb-carousel *ngIf="!small" [interval]="false" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+  <ng-template ngbSlide *ngFor="let groupCard of groupCards">
+    <div class="card-group">
+      <div class="col-2" *ngFor="let card of groupCard">
+        <app-card [cardInfo]="card"></app-card>
+      </div>
+    </div>
   </ng-template>
 </ngb-carousel>

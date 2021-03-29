@@ -12,6 +12,7 @@ import { CarouselService } from '../../services/carousel.service';
 export class CarouselCardComponent implements OnInit {
   public small: boolean = false;
   public cards: any;
+  public groupCards: any;
 
   showNavigationArrows: boolean = true;
   showNavigationIndicators: boolean = true;
@@ -38,6 +39,26 @@ export class CarouselCardComponent implements OnInit {
   fetchCarousel() {
     this.carouselService.getPopMovie().subscribe(result => {
       this.cards = result['results'];
+      var length = this.cards.length;
+      if (length < 6) {
+        this.showNavigationArrows = false;
+        this.showNavigationIndicators = false;
+      } else {
+        this.showNavigationArrows = true;
+        this.showNavigationIndicators = true;
+      }
+
+      this.groupCards = [];
+      var j =  -1;
+      for (var i = 0; i < length; i++) {
+        if (i % 6 == 0) {
+          j++;
+          this.groupCards[j] = [];
+          this.groupCards[j].push(this.cards[i]);
+        } else {
+          this.groupCards[j].push(this.cards[i]);
+        }
+      }
     });
   }
 

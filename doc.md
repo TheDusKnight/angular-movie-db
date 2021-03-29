@@ -52,39 +52,3 @@ https://Node.js.org/en/
 
 https://www.techiediaries.com/angular/responsive-image-breakpoints-cdk-breakpointobserver-angular-9-8/
 
-      if (state.breakpoints[Breakpoints.XSmall]) {
-          //  console.log( 'Matches XSmall viewport');
-          //  this.htmlStyles = "dummy1";
-      }
-      if (state.breakpoints[Breakpoints.Small]) {
-          //  console.log( 'Matches Small viewport');
-      }
-      if (state.breakpoints[Breakpoints.Medium]) {
-          //  console.log( 'Matches Medium  viewport');
-      }
-      if (state.breakpoints[Breakpoints.Large]) {
-    
-          // console.log( 'Matches Large viewport');
-      }
-      if (state.breakpoints[Breakpoints.XLarge]) {
-    
-        //  console.log( 'Matches XLarge viewport');   
-      }
- if (state.breakpoints[Breakpoints.XSmall]) {
-          //  console.log( 'Matches XSmall viewport');
-          //  this.htmlStyles = "dummy1";
-      }
-      if (state.breakpoints[Breakpoints.Small]) {
-          //  console.log( 'Matches Small viewport');
-      }
-      if (state.breakpoints[Breakpoints.Medium]) {
-          //  console.log( 'Matches Medium  viewport');
-      }
-      if (state.breakpoints[Breakpoints.Large]) {
-
-          // console.log( 'Matches Large viewport');
-      }
-      if (state.breakpoints[Breakpoints.XLarge]) {
-    
-        //  console.log( 'Matches XLarge viewport');   
-      }

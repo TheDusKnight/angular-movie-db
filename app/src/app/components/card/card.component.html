@@ -1,6 +1,14 @@
 <p>card works!</p>
-<div class="card">
-  <div class="card-body">
-    <img src="{{cardInfo.poster_path}}" class="card-img-top">
+
+<a [routerLink]="['watch/movie/', cardInfo.id]">
+  <div class="card text-white" style="max-width: 18rem;">
+    <div class="card-body">
+      <div class="my-div">
+        <img class="card-img-top" src="{{cardInfo.poster_path}}" alt="Card image cap">
+      </div>
+      <!-- <div class="card-img-overlay"> -->
+        <p class="card-text">{{cardInfo.name}}</p>
+      <!-- </div> -->
+    </div>
   </div>
-</div>
+</a>

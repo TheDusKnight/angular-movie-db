@@ -13,6 +13,7 @@ export class CarouselCardComponent implements OnInit {
   public small: boolean = true;
   public cards: any;
   public groupCards: any;
+  public title: string;
 
   showNavigationArrows: boolean = true;
   showNavigationIndicators: boolean = true;
@@ -24,10 +25,9 @@ export class CarouselCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakpointObserver.observe([
-      Breakpoints.XSmall
+      Breakpoints.XSmall,
     ]).subscribe((state: BreakpointState) => {
       if (state.matches) {
-        console.log('Matches X small viewport')
         this.small = true;
       } else {
         this.small = false;

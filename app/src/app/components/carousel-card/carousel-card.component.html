@@ -1,16 +1,4 @@
 <!-- <p>carousel-card works!</p> -->
-<!-- {{popMovie}} -->
-<!-- <div class="card-deck">
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-</div> -->
-<!-- <app-card></app-card> -->
-
-<h2>Popular Movies</h2>
 <ngb-carousel *ngIf="small" [interval]="false" [showNavigationArrows]="true" [showNavigationIndicators]="false">
   <ng-template ngbSlide *ngFor="let card of cards">
         <app-card [cardInfo]="card"></app-card>

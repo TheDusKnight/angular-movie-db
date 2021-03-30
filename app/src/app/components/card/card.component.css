@@ -6,8 +6,8 @@
 
 .my-div {
   transition: .2s ease;
-  /* padding-top: 10px; */
-  /* padding-bottom: 10px; */
+  padding-top: 7px;
+  padding-bottom: 8px;
 }
 
 /* .card-body:hover .my-div {

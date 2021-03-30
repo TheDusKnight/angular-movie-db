@@ -54,3 +54,8 @@ The position will be updated and it should not occur at the old position anymore
 
 @1002How to modify css of ngb-corousel? Hint: look for ng-deep
 
+
+
+# Popover
+
+please use a ngbPopOver for creating the external ids of cast members. 

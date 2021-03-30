@@ -10,8 +10,8 @@ import { DetailService } from '../../services/detail.service';
 export class DetailpageComponent implements OnInit {
   public type: string;
   public id:string;
-  public video:any;
-  public prefix:string = "https://www.youtube.com/watch?v="
+  public video = <any> {};
+  // public prefix:string = "https://www.youtube.com/watch?v="
 
   constructor(
     private route: ActivatedRoute,
@@ -28,8 +28,11 @@ export class DetailpageComponent implements OnInit {
 
   fetchVideo() {
     this.detailService.getVideo(this.type, this.id).subscribe(result => {
-      this.video = result['results'];
-      console.log(this.video[0]);
+      if (result['results'].length > 0) {
+        this.video = result['results'][0];
+        // document.getElementById('video').setAttribute('src', this.video.key);
+      };
+      // console.log(this.video[0]);
     })
   }
 

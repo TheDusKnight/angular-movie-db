@@ -2,7 +2,15 @@
 
 key: `788c93d7dc54e946665b5958c8ff0a3a`
 
-`npx nodemon server.js`
+cd server
+
+npx nodemon server.js
+
+cd app
+
+npm start
+
+
 
 Use axis with express: @923
 

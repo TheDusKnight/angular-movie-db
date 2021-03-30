@@ -1,9 +1,11 @@
 <p>homepage works!</p>
 {{device}}
-<div class="container">
+<div class="container pb-3">
   <app-carousel-pause [messageReceived]='message'></app-carousel-pause>
 </div>
 <div class="container">
-  <app-carousel-card [data]='popMovie'></app-carousel-card>
-  <!-- <app-carousel-card [data]="'testInput'"></app-carousel-card> -->
+  <h2>Popular Movies</h2>
+  <app-carousel-card class="pb-5" [data]='popMovie'></app-carousel-card>
+    <h2>Top Rated Movies</h2>
+  <app-carousel-card [data]='topMovie'></app-carousel-card>
 </div>

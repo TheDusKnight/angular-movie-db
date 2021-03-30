@@ -39,39 +39,15 @@ export class CarouselCardComponent implements OnInit {
     //   }
     // })
     this.breakpointService.getBreakpoint().subscribe(result => this.device = result);
-    this.fetchCarousel();
+    // this.fetchCarousel();
     // console.log(this.data);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.data);
-  }
-
-  fetchCarousel() {
-    // this.cards = this.data;
-    // var length = this.cards.length;
-    // if (length <= 6) {
-    //   this.showNavigationArrows = false;
-    //   // this.showNavigationArrows = this.small ? true : false;
-    //   this.showNavigationIndicators = false;
-    // } else {
-    //   this.showNavigationArrows = true;
-    //   this.showNavigationIndicators = true;
-    // }
-
-    // this.groupCards = [];
-    // var j =  -1;
-    // for (var i = 0; i < length; i++) {
-    //   if (i % 6 == 0) {
-    //     j++;
-    //     this.groupCards[j] = [];
-    //     this.groupCards[j].push(this.cards[i]);
-    //   } else {
-    //     this.groupCards[j].push(this.cards[i]);
-    //   }
-    // }
-
-    this.carouselService.getPopMovie().subscribe(result => {
-      this.cards = result['results'];
+    // console.log(this.data + '!!!!!!');
+    if (this.data) { // TODO: 为什么不能用changes['data']
+      console.log(changes['data']);
+      this.cards = this.data;
+      // this.cards = changes['data'];
       var length = this.cards.length;
       if (length <= 6) {
         this.showNavigationArrows = false;
@@ -83,7 +59,7 @@ export class CarouselCardComponent implements OnInit {
       }
 
       this.groupCards = [];
-      var j =  -1;
+      var j = -1;
       for (var i = 0; i < length; i++) {
         if (i % 6 == 0) {
           j++;
@@ -93,8 +69,6 @@ export class CarouselCardComponent implements OnInit {
           this.groupCards[j].push(this.cards[i]);
         }
       }
-    });
+    }
   }
-
-
 }

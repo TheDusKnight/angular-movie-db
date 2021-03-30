@@ -17,6 +17,26 @@ export class CarouselService {
     let popMovieURL = this.host + 'pop/movie';
     return this.http.get(popMovieURL);
   }
+  getTopMovie() {
+    let topMovieURL = this.host + 'top/movie';
+    return this.http.get(topMovieURL);
+  }
+  getTrendMovie() {
+    let trendMovie = this.host + 'trend/movie';
+    return this.http.get(trendMovie);
+  }
+  getPopTv() {
+    let popTvURL = this.host + 'pop/tv';
+    return this.http.get(popTvURL);
+  }
+  getTopTv() {
+    let topTvURL = this.host + 'top/tv';
+    return this.http.get(topTvURL);
+  }
+  getTrendTv() {
+    let trendTv = this.host + 'trend/tv';
+    return this.http.get(trendTv);
+  }
 
   constructor(
     private http: HttpClient

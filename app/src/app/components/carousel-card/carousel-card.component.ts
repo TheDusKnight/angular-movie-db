@@ -41,6 +41,31 @@ export class CarouselCardComponent implements OnInit {
   }
 
   fetchCarousel() {
+    // function process(result) {
+    //   this.cards = result['results'];
+    //   var length = this.cards.length;
+    //   if (length <= 6) {
+    //     this.showNavigationArrows = false;
+    //     // this.showNavigationArrows = this.small ? true : false;
+    //     this.showNavigationIndicators = false;
+    //   } else {
+    //     this.showNavigationArrows = true;
+    //     this.showNavigationIndicators = true;
+    //   }
+
+    //   this.groupCards = [];
+    //   var j =  -1;
+    //   for (var i = 0; i < length; i++) {
+    //     if (i % 6 == 0) {
+    //       j++;
+    //       this.groupCards[j] = [];
+    //       this.groupCards[j].push(this.cards[i]);
+    //     } else {
+    //       this.groupCards[j].push(this.cards[i]);
+    //     }
+    //   }
+    // }
+
     this.carouselService.getPopMovie().subscribe(result => {
       this.cards = result['results'];
       var length = this.cards.length;

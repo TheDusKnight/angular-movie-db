@@ -54,7 +54,9 @@ https://www.techiediaries.com/angular/responsive-image-breakpoints-cdk-breakpoin
 
 # Service
 
-# Angular组件共享数据的四种方法 https://github.com/guitong/blog/issues/21
+Angular组件共享数据的四种方法 https://github.com/guitong/blog/issues/21
+
+Data passed from an Angular parent component to a child component is undefined in child component https://stackoverflow.com/questions/64916766/data-passed-from-an-angular-parent-component-to-a-child-component-is-undefined-i
 
 # CSS
 

@@ -4,8 +4,16 @@
   <app-carousel-pause [messageReceived]='message'></app-carousel-pause>
 </div>
 <div class="container">
-  <h2>Popular Movies</h2>
-  <app-carousel-card class="pb-5" [data]='popMovie'></app-carousel-card>
-    <h2>Top Rated Movies</h2>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Popular Movies</h2>
+  <app-carousel-card [data]='popMovie'></app-carousel-card>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Top Rated Movies</h2>
   <app-carousel-card [data]='topMovie'></app-carousel-card>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Trending Movies</h2>
+  <app-carousel-card [data]='trendMovie'></app-carousel-card>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Popular TV Show</h2>
+  <app-carousel-card [data]='popTv'></app-carousel-card>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Top Rated TV Show</h2>
+  <app-carousel-card [data]='topTv'></app-carousel-card>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Trending TV Show</h2>
+  <app-carousel-card [data]='trendTv'></app-carousel-card>
 </div>

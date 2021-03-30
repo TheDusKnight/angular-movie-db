@@ -19,25 +19,25 @@ export class BreakpointService {
       Breakpoints.XLarge, // min-width equals 1920px
     ]).subscribe((state: BreakpointState) => {
       if (state.breakpoints[Breakpoints.XSmall]) {
-        console.log('Matches XSmall viewport');
+        // console.log('Matches XSmall viewport');
         this.messageSource.next('XSmall');
       }
       if (state.breakpoints[Breakpoints.Small]) {
-        console.log('Matches Small viewport');
+        // console.log('Matches Small viewport');
         this.messageSource.next('Small');
       }
       if (state.breakpoints[Breakpoints.Medium]) {
-        console.log('Matches Medium  viewport');
+        // console.log('Matches Medium  viewport');
         this.messageSource.next('Medium');
       }
       if (state.breakpoints[Breakpoints.Large]) {
 
-        console.log('Matches Large viewport');
+        // console.log('Matches Large viewport');
         this.messageSource.next('Large');
       }
       if (state.breakpoints[Breakpoints.XLarge]) {
 
-        console.log('Matches XLarge viewport');
+        // console.log('Matches XLarge viewport');
         this.messageSource.next('XLarge');
       }
     })

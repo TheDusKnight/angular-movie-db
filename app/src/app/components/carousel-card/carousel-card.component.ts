@@ -43,7 +43,6 @@ export class CarouselCardComponent implements OnInit {
   fetchCarousel() {
     this.carouselService.getPopMovie().subscribe(result => {
       this.cards = result['results'];
-      // this.cards = result['results'].slice(0,5);
       var length = this.cards.length;
       if (length <= 6) {
         this.showNavigationArrows = false;

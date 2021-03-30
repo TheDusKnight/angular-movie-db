@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   displayTitle: boolean = false;
-  @Input() cardInfo: any = {"id": 527774, "name": "Raya and the Last Dragon", "poster_path": "https://image.tmdb.org/t/p/w500/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg"};
+  @Input() cardInfo: any = {"id": 527774, "name": "Raya and the Last Dragon", "poster_path": "https://image.tmdb.org/t/p/w500/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg", "media_type": "tv"};
 
   constructor() { }
 

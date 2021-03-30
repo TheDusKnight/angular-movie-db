@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
-function noQuery(url, res) {
+function noQuery(url, res, type) {
   axios.get(url).then((response) => {
     const o = {};
     const key = 'results';
@@ -20,6 +20,7 @@ function noQuery(url, res) {
           id: result.id || null,
           name: result.title || result.name || null,
           poster_path: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+          media_type: type,
         };
         if (o[key].length < 20) {
           o[key].push(data);
@@ -215,7 +216,7 @@ function getCastExternal(url, res) {
   });
 }
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, papa gog').end();
+  res.status(200).send('Hello, papa').end();
 });
 app.get('/search/multi/:movie', (req, res) => {
   const { movie } = req.params;
@@ -250,19 +251,19 @@ app.get('/search/multi/:movie', (req, res) => {
 });
 app.get('/trend/movie', (req, res) => {
   const url = 'https://api.themoviedb.org/3/trending/movie/day?api_key=788c93d7dc54e946665b5958c8ff0a3a';
-  noQuery(url, res);
+  noQuery(url, res, 'movie');
 });
 app.get('/trend/tv', (req, res) => {
   const url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=788c93d7dc54e946665b5958c8ff0a3a';
-  noQuery(url, res);
+  noQuery(url, res, 'tv');
 });
 app.get('/top/movie', (req, res) => {
   const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1';
-  noQuery(url, res);
+  noQuery(url, res, 'movie');
 });
 app.get('/top/tv', (req, res) => {
   const url = 'https://api.themoviedb.org/3/tv/top_rated?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1';
-  noQuery(url, res);
+  noQuery(url, res, 'tv');
 });
 app.get('/current/movie', (req, res) => {
   const url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1';
@@ -292,31 +293,31 @@ app.get('/current/movie', (req, res) => {
 });
 app.get('/pop/movie', (req, res) => {
   const url = 'https://api.themoviedb.org/3/movie/popular?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1';
-  noQuery(url, res);
+  noQuery(url, res, 'movie');
 });
 app.get('/pop/tv', (req, res) => {
   const url = 'https://api.themoviedb.org/3/tv/popular?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1';
-  noQuery(url, res);
+  noQuery(url, res, 'tv');
 });
 app.get('/recommend/movie/:id', (req, res) => {
   const { id } = req.params;
   const url = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
-  noQuery(url, res);
+  noQuery(url, res, 'movie');
 });
 app.get('/recommend/tv/:id', (req, res) => {
   const { id } = req.params;
   const url = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
-  noQuery(url, res);
+  noQuery(url, res, 'tv');
 });
 app.get('/similar/movie/:id', (req, res) => {
   const { id } = req.params;
   const url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
-  noQuery(url, res);
+  noQuery(url, res, 'movie');
 });
 app.get('/similar/tv/:id', (req, res) => {
   const { id } = req.params;
   const url = `https://api.themoviedb.org/3/tv/${id}/similar?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1`;
-  noQuery(url, res);
+  noQuery(url, res, 'tv');
 });
 app.get('/movie/video/:id', (req, res) => {
   const { id } = req.params;

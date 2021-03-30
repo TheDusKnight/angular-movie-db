@@ -14,6 +14,7 @@ import { DetailpageComponent } from './components/detailpage/detailpage.componen
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MylistpageComponent } from './components/mylistpage/mylistpage.component';
 import { CarouselCardComponent } from './components/carousel-card/carousel-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CarouselCardComponent } from './components/carousel-card/carousel-card.
     BreakpointComponent,
     CardComponent,
     CarouselCardComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

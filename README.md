@@ -52,7 +52,5 @@ if the movie/tv show is already in the continue watching section, it's been plac
 
 The position will be updated and it should not occur at the old position anymore.
 
-How to scale the card on hover and it's not just zoom the image@1128 Try giving some extra padding for the container.
-
 @1002How to modify css of ngb-corousel? Hint: look for ng-deep
 

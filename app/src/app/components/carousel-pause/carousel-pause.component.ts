@@ -1,6 +1,6 @@
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { BreakpointService } from '../../services/breakpoint.service';
 import { CarouselService } from '../../services/carousel.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class CarouselPauseComponent implements OnInit, OnChanges {
   @Input() messageReceived: String = "Default message from carousel-pause";
   // public currentPlayings: object = {};
   public currentPlayings: any; // TODO: why object doesn't work?
+  public device: string;
 
   // breakpoint: any;
   paused = false;
@@ -31,48 +32,50 @@ export class CarouselPauseComponent implements OnInit, OnChanges {
   // }
   constructor(
     private carouselService: CarouselService,
-    // private breakpointService: BreakpointService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointService: BreakpointService,
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     // throw new Error('Method not implemented.');
+    console.log(this.device);
 
   }
 
   ngOnInit(): void {
     this.fetchCarousel();
-    this.breakpointObserver.observe([
-      Breakpoints.XSmall, // max-width equals 599.99px
-      Breakpoints.Small, // min-width equals 600px and max-width equals 959.99px
-      Breakpoints.Medium, // min-width equals 960px and max-width equals 1279.99px
-      Breakpoints.Large, // min-width equals 1280px and max-width equals 1919.99px
-      Breakpoints.XLarge // min-width equals 1920px
-    ]).subscribe((state: BreakpointState) => {
-      if (state.breakpoints[Breakpoints.XSmall]) {
-        console.log('Matches XSmall viewport');
-        //  this.htmlStyles = "dummy1";
-        this.showNavigationIndicators = false;
-        // document.getElementById('my-watch').className = "hold-div";
+    this.breakpointService.getBreakpoint().subscribe(result => this.device = result);
+    
+    // this.breakpointObserver.observe([
+    //   Breakpoints.XSmall, // max-width equals 599.99px
+    //   Breakpoints.Small, // min-width equals 600px and max-width equals 959.99px
+    //   Breakpoints.Medium, // min-width equals 960px and max-width equals 1279.99px
+    //   Breakpoints.Large, // min-width equals 1280px and max-width equals 1919.99px
+    //   Breakpoints.XLarge // min-width equals 1920px
+    // ]).subscribe((state: BreakpointState) => {
+    //   if (state.breakpoints[Breakpoints.XSmall]) {
+    //     // console.log('Matches XSmall viewport');
+    //     //  this.htmlStyles = "dummy1";
+    //     this.showNavigationIndicators = false;
+    //     // document.getElementById('my-watch').className = "hold-div";
         
-      }
-      if (state.breakpoints[Breakpoints.Small]) {
-        console.log('Matches Small viewport');
-        this.showNavigationIndicators = true;
-      }
-      if (state.breakpoints[Breakpoints.Medium]) {
-        console.log('Matches Medium  viewport');
-        this.showNavigationIndicators = true; // TODO: change it to false?
-      }
-      if (state.breakpoints[Breakpoints.Large]) {
-        console.log('Matches Large viewport');
-        this.showNavigationIndicators = true;
-      }
-      if (state.breakpoints[Breakpoints.XLarge]) {
-        console.log('Matches XLarge viewport');
-        this.showNavigationIndicators = true;
-      }
-    })
+    //   }
+    //   if (state.breakpoints[Breakpoints.Small]) {
+    //     // console.log('Matches Small viewport');
+    //     this.showNavigationIndicators = true;
+    //   }
+    //   if (state.breakpoints[Breakpoints.Medium]) {
+    //     // console.log('Matches Medium  viewport');
+    //     this.showNavigationIndicators = true; // TODO: change it to false?
+    //   }
+    //   if (state.breakpoints[Breakpoints.Large]) {
+    //     // console.log('Matches Large viewport');
+    //     this.showNavigationIndicators = true;
+    //   }
+    //   if (state.breakpoints[Breakpoints.XLarge]) {
+    //     // console.log('Matches XLarge viewport');
+    //     this.showNavigationIndicators = true;
+    //   }
+    // })
   }
 
   fetchCarousel() {

@@ -1,5 +1,6 @@
 <p>carousel-pause works!</p>
 {{messageReceived}}
+<!-- {{device}} -->
 <!-- {{currentPlayings}} -->
 
 <!-- <div *ngFor="let currentPlaying of currentPlayings">
@@ -10,14 +11,14 @@
     (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">
       <a [routerLink]="['watch/movie/', currentPlaying.id]">
-        <div *ngIf="showNavigationIndicators" class="my-div">
+        <div *ngIf="device !== 'XSmall'" class="my-div">
           <div class="carousel-caption">
             <h6>{{currentPlaying.name}}
             </h6>
           </div>
           <img [src]="currentPlaying.backdrop_path" alt="My image {{i + 1}} description">
         </div>
-        <div *ngIf="!showNavigationIndicators" class="hold-div">
+        <div *ngIf="device === 'XSmall'" class="hold-div">
           <div class="carousel-caption">
             <p>{{currentPlaying.name}}
             <p>

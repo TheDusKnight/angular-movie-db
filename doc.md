@@ -52,3 +52,11 @@ https://Node.js.org/en/
 
 https://www.techiediaries.com/angular/responsive-image-breakpoints-cdk-breakpointobserver-angular-9-8/
 
+# Service
+
+# Angular组件共享数据的四种方法 https://github.com/guitong/blog/issues/21
+
+# CSS
+
+Image Overlay Slide https://www.w3schools.com/howto/howto_css_image_overlay_slide.asp
+

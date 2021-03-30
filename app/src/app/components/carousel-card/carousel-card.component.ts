@@ -1,6 +1,7 @@
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { BreakpointService } from '../../services/breakpoint.service';
 import { CarouselService } from '../../services/carousel.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { CarouselService } from '../../services/carousel.service';
   providers: [NgbCarouselConfig],
 })
 export class CarouselCardComponent implements OnInit {
+  public device: string;
   public small: boolean = true;
   public cards: any;
   public groupCards: any;
@@ -21,18 +23,20 @@ export class CarouselCardComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private carouselService: CarouselService,
+    private breakpointService: BreakpointService,
   ) { }
 
   ngOnInit(): void {
-    this.breakpointObserver.observe([
-      Breakpoints.XSmall,
-    ]).subscribe((state: BreakpointState) => {
-      if (state.matches) {
-        this.small = true;
-      } else {
-        this.small = false;
-      }
-    })
+    // this.breakpointObserver.observe([
+    //   Breakpoints.XSmall,
+    // ]).subscribe((state: BreakpointState) => {
+    //   if (state.matches) {
+    //     this.small = true;
+    //   } else {
+    //     this.small = false;
+    //   }
+    // })
+    this.breakpointService.getBreakpoint().subscribe(result => this.device = result);
     this.fetchCarousel();
   }
 

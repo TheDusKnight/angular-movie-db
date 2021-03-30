@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { BreakpointService } from '../../services/breakpoint.service';
 import { CarouselService } from '../../services/carousel.service';
@@ -16,6 +16,8 @@ export class CarouselCardComponent implements OnInit {
   public cards: any;
   public groupCards: any;
   public title: string;
+  // @Input() public data: any;
+  @Input() public data: any = 'hello test';
 
   showNavigationArrows: boolean = true;
   showNavigationIndicators: boolean = true;
@@ -38,31 +40,33 @@ export class CarouselCardComponent implements OnInit {
     // })
     this.breakpointService.getBreakpoint().subscribe(result => this.device = result);
     this.fetchCarousel();
+    // console.log(this.data);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.data);
   }
 
   fetchCarousel() {
-    // function process(result) {
-    //   this.cards = result['results'];
-    //   var length = this.cards.length;
-    //   if (length <= 6) {
-    //     this.showNavigationArrows = false;
-    //     // this.showNavigationArrows = this.small ? true : false;
-    //     this.showNavigationIndicators = false;
-    //   } else {
-    //     this.showNavigationArrows = true;
-    //     this.showNavigationIndicators = true;
-    //   }
+    // this.cards = this.data;
+    // var length = this.cards.length;
+    // if (length <= 6) {
+    //   this.showNavigationArrows = false;
+    //   // this.showNavigationArrows = this.small ? true : false;
+    //   this.showNavigationIndicators = false;
+    // } else {
+    //   this.showNavigationArrows = true;
+    //   this.showNavigationIndicators = true;
+    // }
 
-    //   this.groupCards = [];
-    //   var j =  -1;
-    //   for (var i = 0; i < length; i++) {
-    //     if (i % 6 == 0) {
-    //       j++;
-    //       this.groupCards[j] = [];
-    //       this.groupCards[j].push(this.cards[i]);
-    //     } else {
-    //       this.groupCards[j].push(this.cards[i]);
-    //     }
+    // this.groupCards = [];
+    // var j =  -1;
+    // for (var i = 0; i < length; i++) {
+    //   if (i % 6 == 0) {
+    //     j++;
+    //     this.groupCards[j] = [];
+    //     this.groupCards[j].push(this.cards[i]);
+    //   } else {
+    //     this.groupCards[j].push(this.cards[i]);
     //   }
     // }
 

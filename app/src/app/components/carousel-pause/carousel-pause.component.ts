@@ -37,7 +37,8 @@ export class CarouselPauseComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // throw new Error('Method not implemented.');
-    console.log(this.device);
+    // console.log(this.device);
+    // console.log(this.messageReceived);
 
   }
 

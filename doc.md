@@ -60,3 +60,6 @@ https://www.techiediaries.com/angular/responsive-image-breakpoints-cdk-breakpoin
 
 Image Overlay Slide https://www.w3schools.com/howto/howto_css_image_overlay_slide.asp
 
+# [How to hide part of the image?](https://stackoverflow.com/questions/11092146/how-to-hide-part-of-the-image)
+
+[Ask Question](https://stackoverflow.com/questions/ask)

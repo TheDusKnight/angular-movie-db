@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DetailService } from '../../services/detail.service';
 
 @Component({
   selector: 'app-detailpage',
@@ -9,14 +10,27 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailpageComponent implements OnInit {
   public type: string;
   public id:string;
+  public video:any;
+  public prefix:string = "https://www.youtube.com/watch?v="
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private detailService: DetailService,
+    ) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    this.id = routeParams.get('id');
     this.type = routeParams.get('type');
-    // this.type = this.route.snapshot.paramMap.get('type');
+    this.id = routeParams.get('id');
+    // console.log(this.id, this.type);
+    this.fetchVideo();
+  }
+
+  fetchVideo() {
+    this.detailService.getVideo(this.type, this.id).subscribe(result => {
+      this.video = result['results'];
+      console.log(this.video[0]);
+    })
   }
 
 }

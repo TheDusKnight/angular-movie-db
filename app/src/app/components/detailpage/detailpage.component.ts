@@ -7,12 +7,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detailpage.component.css']
 })
 export class DetailpageComponent implements OnInit {
+  public type: string;
   public id:string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+    const routeParams = this.route.snapshot.paramMap;
+    this.id = routeParams.get('id');
+    this.type = routeParams.get('type');
+    // this.type = this.route.snapshot.paramMap.get('type');
   }
 
 }

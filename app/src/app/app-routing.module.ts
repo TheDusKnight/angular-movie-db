@@ -7,17 +7,21 @@ import { MylistpageComponent } from './components/mylistpage/mylistpage.componen
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'mylist', component: MylistpageComponent},
+  // {
+  //   path: 'watch/movie',
+  //   children: [
+  //     {path:':id', component: DetailpageComponent},
+  //   ]
+  // },
+  // {
+  //   path: 'watch/tv',
+  //   children: [
+  //     {path:':id', component: DetailpageComponent},
+  //   ]
+  // },
+  
   {
-    path: 'watch/movie',
-    children: [
-      {path:':id', component: DetailpageComponent},
-    ]
-  },
-  {
-    path: 'watch/tv',
-    children: [
-      {path:':id', component: DetailpageComponent},
-    ]
+    path:'watch/:type/:id', component: DetailpageComponent,
   }
 ];
 

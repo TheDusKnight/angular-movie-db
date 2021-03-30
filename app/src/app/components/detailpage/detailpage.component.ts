@@ -28,11 +28,7 @@ export class DetailpageComponent implements OnInit {
 
   fetchVideo() {
     this.detailService.getVideo(this.type, this.id).subscribe(result => {
-      if (result['results'].length > 0) {
         this.video = result['results'][0];
-        // document.getElementById('video').setAttribute('src', this.video.key);
-      };
-      // console.log(this.video[0]);
     })
   }
 

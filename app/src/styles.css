@@ -6,6 +6,7 @@ html,body{
   color: white;
   background-color: rgba(6,12,46);
   /* font-size: 1rem; */
+  font-family: 'Raleway', sans-serif;
 }
 
 /* @include media-breakpoint-up(sm) {

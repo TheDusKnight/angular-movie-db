@@ -59,3 +59,8 @@ The position will be updated and it should not occur at the old position anymore
 # Popover
 
 please use a ngbPopOver for creating the external ids of cast members. 
+
+
+
+# window.localStorage
+

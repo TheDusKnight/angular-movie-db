@@ -11,6 +11,7 @@ export class DetailpageComponent implements OnInit {
   public type: string;
   public id:string;
   public video = <any> {};
+  public detail:any;
   // public prefix:string = "https://www.youtube.com/watch?v="
 
   constructor(
@@ -26,10 +27,27 @@ export class DetailpageComponent implements OnInit {
     this.fetchVideo();
   }
 
+
   fetchVideo() {
     this.detailService.getVideo(this.type, this.id).subscribe(result => {
         this.video = result['results'][0];
     })
+    this.detailService.getDetail(this.type, this.id).subscribe(result => {
+        this.detail = result['results'][0];
+        this.detail.release_date = new Date(this.detail.release_date).getFullYear().toString();
+        this.detail.runtime = timeConvert(this.detail.runtime)
+        this.detail.genres = this.detail.genres.filter(Boolean).join(', ')
+        this.detail.spoken_languages = this.detail.spoken_languages.filter(Boolean).join(', ')
+    })
   }
 
 }
+
+function timeConvert(n) {
+  var num = n;
+  var hours = (num / 60);
+  var rhours = Math.floor(hours);
+  var minutes = (hours - rhours) * 60;
+  var rminutes = Math.round(minutes);
+  return rhours + " hrs " + rminutes + " mins";
+  }

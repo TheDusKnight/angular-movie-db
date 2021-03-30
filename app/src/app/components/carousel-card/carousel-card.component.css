@@ -46,9 +46,9 @@
 }
 
 @media screen and (min-width: 601px) {
-ngb-carousel::ng-deep {
-  margin-top: 30px;
-  padding-top: 30px;
+ngb-carousel {
+  /* margin-top: 30px; */
+  padding-top: 10px;
   margin-left: -90px;
   padding-left: 90px;
   margin-right: -90px;

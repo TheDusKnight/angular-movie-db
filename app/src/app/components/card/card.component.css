@@ -1,11 +1,13 @@
 .card {
   border: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 
 .my-div {
   transition: .2s ease;
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
 }
 
 /* .card-body:hover .my-div {

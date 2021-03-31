@@ -17,4 +17,18 @@ export class CollapseNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClickHome() {
+    this.isMenuCollapsed = true;
+    console.log('home clicked')
+    document.getElementById("home").className = "nav-item active"
+    document.getElementById("list").className = "nav-item"
+  }
+
+  onClickList() {
+    this.isMenuCollapsed = true;
+    console.log('list clicked');
+    document.getElementById("list").className = "nav-item active"
+    document.getElementById("home").className = "nav-item"
+  }
 }
+

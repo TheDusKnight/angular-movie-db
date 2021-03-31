@@ -43,7 +43,8 @@ export class DetailpageComponent implements OnInit {
         // store in local storage
         var orderList = JSON.parse(localStorage.getItem("orderList")) || [];
         if (orderList.length < 24) {
-          if (localStorage.getItem(this.id) === null) {
+          // if (localStorage.getItem(this.id) === null) {
+          if (!orderList.includes(this.id)) {
             orderList.unshift(this.id); // add to last
             const store = {
               id: this.id,

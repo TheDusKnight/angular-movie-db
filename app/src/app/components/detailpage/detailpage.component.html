@@ -45,9 +45,25 @@
   <h4 class="mt-4">Description</h4>
   <p style="font-weight: lighter; color: rgb(145,151,183)">{{detail.overview}}</p>
   <h4 class="mt-4">Share</h4>
-  <i class="fab fa-twitter"></i>
-  <!-- <a class="twitter-share-button" href="https://twitter.com/intent/tweet">
-    Tweet</a> -->
+  <!-- <a [routerLink]="['/watch/', cardInfo.media_type, cardInfo.id]"></a> -->
+  <a class="twitter-share-button"
+    href="https://twitter.com/intent/tweet?text=Watch{{escapeName}}&url={{escapeURL}}&hashtags=USC,CSCI571,FightOn"
+    target="_blank">
+    <i class="fa fa-twitter fa-3x">
+    </i>
+  </a>
+  <!-- <div class="fb-share-button" data-href="https://www.youtube.com/watch?v={{video.key}}" data-layout="button_count" data-size="small">
+      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{video.key}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a>
+    </div> -->
+  <div class="fb-share-button" data-href="https://www.youtube.com/watch?v=g5xr2IjmbLE" data-layout="button_count"
+    data-size="small">
+    <a>
+      <a target="_blank"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{video.key}}&amp;src=sdkpreparse"
+        class="fb-xfbml-parse-ignore">分享</a>
+    </a>
+  </div>
+
 
   <!-- </div> -->
 </div>

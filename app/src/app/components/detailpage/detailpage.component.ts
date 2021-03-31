@@ -15,6 +15,9 @@ export class DetailpageComponent implements OnInit {
   public id:string;
   public video = <any> {};
   public detail = <any> {};
+  public escapeName:string;
+  public escapeURL:string;
+  public escapeKey:string;
   // public prefix:string = "https://www.youtube.com/watch?v="
 
   private _add = new Subject<string>();
@@ -86,9 +89,12 @@ export class DetailpageComponent implements OnInit {
   fetchDetail() {
     this.detailService.getVideo(this.type, this.id).subscribe(result => {
         this.video = result['results'][0];
+        this.escapeURL = escape("https://youtube.com/watch?v=" + this.video.key + '\n');
+        this.escapeKey = escape(this.video.key);
     })
     this.detailService.getDetail(this.type, this.id).subscribe(result => {
         this.detail = result['results'][0];
+        this.escapeName = escape(' ' + this.detail.name)
         this.detail.release_date = new Date(this.detail.release_date).getFullYear().toString();
         this.detail.runtime = timeConvert(this.detail.runtime)
         this.detail.genres = this.detail.genres.filter(Boolean).join(', ')

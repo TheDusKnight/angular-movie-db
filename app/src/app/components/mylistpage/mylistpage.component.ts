@@ -6,20 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mylistpage.component.css']
 })
 export class MylistpageComponent implements OnInit {
-  public watchList: any = null;
-  public items: any;
+  public watchList: any;
+  public cards: any;
 
   constructor(
   ) { }
 
   ngOnInit(): void {
-    var watchList = localStorage.getItem('watchList') || [];
-    if (watchList.length > 0) {
+    this.watchList = JSON.parse(localStorage.getItem('watchList')) || [];
+    if (this.watchList.length > 0) {
       // console.log(watchList.length)
-
+      this.cards = []
+      for (var i = 0; i < this.watchList.length; i++) {
+        this.cards.push(JSON.parse(localStorage.getItem(this.watchList[i])))
+      }
     } else {
-      watchList = null;
+      this.watchList = null;
     }
+    // console.log(this.cards)
+    // console.log(this.watchList)
   }
 
 }

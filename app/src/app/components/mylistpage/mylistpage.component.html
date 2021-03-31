@@ -1,4 +1,13 @@
-<div class="container text-center">
-  <h1 *ngIf="watchList == null" class='pt-5'>No items found in Watchlist.</h1>
-
+<div class="container">
+  <h1 *ngIf="!watchList" class='pt-5 text-center'>No items found in Watchlist.</h1>
+  <div *ngIf="watchList">
+    <h1 class="pt-5">My Watchlist</h1>
+  </div>
+  <div *ngIf="watchList" class="card-deck">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6" *ngFor="let card of cards">
+      <div class="mt-5">
+        <app-card [cardInfo]="card" ></app-card>
+      </div>
+    </div>
+  </div>
 </div>

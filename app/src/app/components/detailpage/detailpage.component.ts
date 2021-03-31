@@ -18,8 +18,12 @@ export class DetailpageComponent implements OnInit {
   // public prefix:string = "https://www.youtube.com/watch?v="
 
   private _add = new Subject<string>();
+  private _remove = new Subject<string>();
+  public watchButton = '';
+  public added:boolean = false;
   staticAlertClosed = false;
   addMessage = '';
+  removeMessage = '';
   @ViewChild('selfClosingAlert', {static: false})
   selfClosingAlert: NgbAlert; // any?
 
@@ -36,8 +40,21 @@ export class DetailpageComponent implements OnInit {
     this.fetchDetail();
     // this.storage(this.id, this.type, this.detail.name, this.detail.);
 
+    var watchList = localStorage.getItem('watchList') || [];
+    if (watchList.includes(this.id)) {
+      this.watchButton = "Remove from Watchlist";
+    } else {
+      this.watchButton = "Add to Watchlist";
+    }
+
     this._add.subscribe(message => this.addMessage = message);
     this._add.pipe(debounceTime(5000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
+    this._remove.subscribe(message => this.removeMessage = message);
+    this._remove.pipe(debounceTime(5000)).subscribe(() => {
       if (this.selfClosingAlert) {
         this.selfClosingAlert.close();
       }
@@ -45,7 +62,24 @@ export class DetailpageComponent implements OnInit {
   }
 
   public addRemoveMessage() {
-    this._add.next(`Added to watchlist`);
+    // this._add.next(`Added to watchlist`);
+    // this._remove.next(`Removed from watchlist`);
+    var watchList = JSON.parse(localStorage.getItem("watchList")) || [];
+    if (watchList.includes(this.id)) {
+      this.watchButton = "Add to Watchlist";
+      this._add.next('');
+      this._remove.next(`Removed from watchList`);
+      watchList = watchList.filter(item => item !== this.id);
+      localStorage.setItem("watchList", JSON.stringify(watchList))
+      // localStorage.removeItem(this.id)
+    } else {
+      this.watchButton = "Remove from Watchlist";
+      this._remove.next('');
+      this._add.next(`Added to watchList`);
+      watchList.unshift(this.id);
+      localStorage.setItem("watchList", JSON.stringify(watchList));
+      // TODO: store cache or not?
+    }
   }
 
 
@@ -82,7 +116,8 @@ export class DetailpageComponent implements OnInit {
           }
         } else { // remove Least Recently Used item
           const lastItem = orderList.pop();
-          localStorage.removeItem(lastItem);
+          // TODO: remove cache or not?
+          // localStorage.removeItem(lastItem);
           orderList.unshift(this.id);
           localStorage.setItem("orderList", JSON.stringify(orderList));
           const store = {

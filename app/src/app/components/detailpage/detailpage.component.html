@@ -27,11 +27,15 @@
       <p>Genres: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.genres}}</span></p>
       <p>Spoken Language: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.spoken_languages}}</span></p>
       <!-- <button type="button" class="btn btn-primary btn-lg mt-2" data-toggle="popover">Add to Watchlist</button> -->
-      <ngb-alert #selfClosingAlert *ngIf="addMessage" type="success" (closed)="addMessage = ''">{{ addMessage }}
-      </ngb-alert>
       <p>
-        <button class="btn btn-primary" (click)="addRemoveMessage()">Add to Watchlist</button>
+        <button id="watchlist" class="btn btn-primary" (click)="addRemoveMessage()">{{watchButton}}</button>
       </p>
+      <ngb-alert #selfClosingAlert *ngIf="addMessage" type="success" (closed)="addMessage = ''">
+        {{ addMessage }}
+      </ngb-alert>
+      <ngb-alert #selfClosingAlert *ngIf="removeMessage" type="danger" (closed)="removeMessage = ''">
+        {{ removeMessage }}
+      </ngb-alert>
     </div>
   </div>
   <!-- <div class="container"> -->

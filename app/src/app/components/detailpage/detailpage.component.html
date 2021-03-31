@@ -46,22 +46,27 @@
   <p style="font-weight: lighter; color: rgb(145,151,183)">{{detail.overview}}</p>
   <h4 class="mt-4">Share</h4>
   <!-- <a [routerLink]="['/watch/', cardInfo.media_type, cardInfo.id]"></a> -->
-  <a class="twitter-share-button"
-    href="https://twitter.com/intent/tweet?text=Watch{{escapeName}}&url={{escapeURL}}&hashtags=USC,CSCI571,FightOn"
-    target="_blank">
-    <i class="fa fa-twitter fa-3x">
-    </i>
-  </a>
-  <div class="fb-share-button" data-href="https://www.youtube.com/watch?v=g5xr2IjmbLE" data-layout="button_count"
-    data-size="small">
-    <a>
-      <a target="_blank"
-        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{video.key}}&amp;src=sdkpreparse"
-        class="fb-xfbml-parse-ignore">
-        <i class="fab fa-facebook-square fa-3x"></i>
+  <div class="container">
+    <div class="row">
+      <a class="twitter-share-button pr-2"
+        href="https://twitter.com/intent/tweet?text=Watch{{escapeName}}&url={{escapeURL}}&hashtags=USC,CSCI571,FightOn"
+        target="_blank">
+        <i class="fa fa-twitter fa-3x">
+        </i>
       </a>
-    </a>
+      <div class="fb-share-button" data-href="https://www.youtube.com/watch?v=g5xr2IjmbLE">
+        <a>
+          <a target="_blank"
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{video.key}}&amp;src=sdkpreparse"
+            class="fb-xfbml-parse-ignore">
+            <i class="fab fa-facebook-square fa-3x"></i>
+          </a>
+        </a>
+      </div>
+    </div>
   </div>
+
+
 
 
   <!-- </div> -->

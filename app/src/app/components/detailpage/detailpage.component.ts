@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { DetailService } from '../../services/detail.service';
 
 @Component({
@@ -14,6 +17,12 @@ export class DetailpageComponent implements OnInit {
   public detail = <any> {};
   // public prefix:string = "https://www.youtube.com/watch?v="
 
+  private _add = new Subject<string>();
+  staticAlertClosed = false;
+  addMessage = '';
+  @ViewChild('selfClosingAlert', {static: false})
+  selfClosingAlert: NgbAlert; // any?
+
   constructor(
     private route: ActivatedRoute,
     private detailService: DetailService,
@@ -26,6 +35,17 @@ export class DetailpageComponent implements OnInit {
     // console.log(this.id, this.type);
     this.fetchDetail();
     // this.storage(this.id, this.type, this.detail.name, this.detail.);
+
+    this._add.subscribe(message => this.addMessage = message);
+    this._add.pipe(debounceTime(5000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
+  }
+
+  public addRemoveMessage() {
+    this._add.next(`Added to watchlist`);
   }
 
 

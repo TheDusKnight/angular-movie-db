@@ -16,6 +16,7 @@ import { DetailpageComponent } from './components/detailpage/detailpage.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MylistpageComponent } from './components/mylistpage/mylistpage.component';
+import { AlertSelfclosingComponent } from './components/alert-selfclosing/alert-selfclosing.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MylistpageComponent } from './components/mylistpage/mylistpage.componen
     CardComponent,
     CarouselCardComponent,
     FooterComponent,
+    AlertSelfclosingComponent,
   ],
   imports: [
     BrowserModule,

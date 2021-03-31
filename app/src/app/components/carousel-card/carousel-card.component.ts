@@ -42,7 +42,7 @@ export class CarouselCardComponent implements OnInit {
     // this.fetchCarousel();
     // console.log(this.data);
   }
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges): void { // service changes async
     // console.log(this.data + '!!!!!!');
     if (this.data) { // TODO: 为什么不能用changes['data']
       // console.log(changes['data']);

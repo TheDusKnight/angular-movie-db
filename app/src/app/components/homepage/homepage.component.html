@@ -1,14 +1,16 @@
 <p>homepage works!</p>
 {{device}}
+<!-- {{continueWatch}} -->
+<!-- {{popMovie}} -->
 <div class="container pb-3">
   <app-carousel-pause [messageReceived]='message'></app-carousel-pause>
 </div>
 <div class="container">
   <!-- TODO: Add continue to watch -->
-  <!-- <div *ngIf="continueWatch">
+  <div *ngIf="continueWatch">
     <h2 class="pl-5 pl-md-0 my-3 my-md-0">Continue Watching</h2>
     <app-carousel-card [data]='continueWatch'></app-carousel-card>
-  </div> -->
+  </div>
   <h2 class="pl-5 pl-md-0 my-3 my-md-0">Popular Movies</h2>
   <app-carousel-card [data]='popMovie'></app-carousel-card>
   <h2 class="pl-5 pl-md-0 my-3 my-md-0">Top Rated Movies</h2>

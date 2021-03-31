@@ -72,7 +72,7 @@ export class DetailpageComponent implements OnInit {
           }
           localStorage.setItem(this.id, JSON.stringify(store));
         }
-        console.log(localStorage);
+        // console.log(localStorage);
     })
   }
 }

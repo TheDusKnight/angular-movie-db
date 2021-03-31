@@ -75,7 +75,6 @@ function getDetail(url, res) {
     const o = {};
     const key = 'results';
     o[key] = [];
-    // TODO: 前端注意修改时间
     const result = response.data;
     const genre = [];
     result.genres.forEach((g) => { // TODO: check is genre is undefined
@@ -96,16 +95,17 @@ function getDetail(url, res) {
       overview: result.overview || null,
       vote_average: result.vote_average || null,
       tagline: result.tagline || null,
+      poster_path: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
     };
     o[key].push(data);
-    if (o[key].length === 0) {
-      o[key].push({
-        site: 'YouTube',
-        type: 'Trailer',
-        name: 'Dilwale Dulhania Le Jayenge',
-        key: 'tzkWB85ULJY',
-      });
-    }
+    // if (o[key].length === 0) {
+    //   o[key].push({
+    //     site: 'YouTube',
+    //     type: 'Trailer',
+    //     name: 'Dilwale Dulhania Le Jayenge',
+    //     key: 'tzkWB85ULJY',
+    //   });
+    // }
     o.total = o[key].length;
     res.json(o);
   }).catch((error) => {

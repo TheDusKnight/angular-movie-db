@@ -18,15 +18,17 @@
       <div class="embed-responsive embed-responsive-16by9">
         <!-- <iframe class="embed-responsive-item" src="{{'https://www.youtube.com/embed/' + video.key}}"></iframe> -->
         <!-- <iframe id="video" class="embed-responsive-item" src="https://www.youtube.com/embed/tzkWB85ULJY"></iframe> -->
-        <youtube-player videoId= {{video.key}}> </youtube-player>
+        <youtube-player videoId={{video.key}}> </youtube-player>
       </div>
     </div>
     <div class="col-sm-4">
       <h1>{{detail.name}}</h1>
       <p style="font-style: italic; font-weight:lighter; font-size: 21px; color:rgb(145,151,183)">{{detail.tagline}}</p>
-      <p style="font-weight:lighter; color: rgb(145,151,183)">{{detail.release_date}} | &#9733;{{detail.vote_average}} | {{detail.runtime}}</p>
+      <p style="font-weight:lighter; color: rgb(145,151,183)">{{detail.release_date}} | &#9733;{{detail.vote_average}} |
+        {{detail.runtime}}</p>
       <p>Genres: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.genres}}</span></p>
-      <p>Spoken Language: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.spoken_languages}}</span></p>
+      <p>Spoken Language: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.spoken_languages}}</span>
+      </p>
       <!-- <button type="button" class="btn btn-primary btn-lg mt-2" data-toggle="popover">Add to Watchlist</button> -->
       <p>
         <button id="watchlist" class="btn btn-primary" (click)="addRemoveMessage()">{{watchButton}}</button>
@@ -40,9 +42,12 @@
     </div>
   </div>
   <!-- <div class="container"> -->
-    <h4 class="mt-4">Description</h4>
-    <p style="font-weight: lighter; color: rgb(145,151,183)">{{detail.overview}}</p>
-    <h4 class="mt-4">Share</h4>
-    
+  <h4 class="mt-4">Description</h4>
+  <p style="font-weight: lighter; color: rgb(145,151,183)">{{detail.overview}}</p>
+  <h4 class="mt-4">Share</h4>
+  <i class="fab fa-twitter"></i>
+  <!-- <a class="twitter-share-button" href="https://twitter.com/intent/tweet">
+    Tweet</a> -->
+
   <!-- </div> -->
 </div>

@@ -10,6 +10,12 @@ export class MylistpageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    var watchList = localStorage.getItem('watchList') || [];
+    if (watchList.length > 0) {
+
+    } else {
+      watchList = null;
+    }
   }
 
 }

@@ -46,7 +46,7 @@ for 4.1.5, 4.1.3, 4.1.2, 4.1.14, etc..., ignore movies that don't have backdrop_
 
 Continue Watching and watchlist peresist
 
-consider the continue watching, stored in localStorage, as an LRU. Always place the most recently watched at the first element and set an upper bound to the total number to 24. Remove the least recently viewed ones at the end of list
+consider the continue watching, stored in localStorage, as an LRU. Always place the most recently watched at the first element and **set an upper bound to the total number to 24**. Remove the least recently viewed ones at the end of list
 
 if the movie/tv show is already in the continue watching section, it's been placed in the **first place** (start of the carousel).
 

@@ -11,7 +11,7 @@ export class DetailpageComponent implements OnInit {
   public type: string;
   public id:string;
   public video = <any> {};
-  public detail:any;
+  public detail = <any> {};
   // public prefix:string = "https://www.youtube.com/watch?v="
 
   constructor(

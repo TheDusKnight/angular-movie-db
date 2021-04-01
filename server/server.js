@@ -183,6 +183,7 @@ function getCastDetail(url, res) {
       birthday: result.birthday || null,
       gender: result.gender || null,
       name: result.name || null,
+      place_of_birth: result.place_of_birth || null,
       homepage: result.homepage || null,
       also_known_as: result.also_known_as || null,
       known_for_department: result.known_for_department || null,

@@ -62,5 +62,17 @@ please use a ngbPopOver for creating the external ids of cast members.
 
 
 
-# window.localStorage
+# Cast list
+
+display just the cast list, full cast list
+
+
+
+cast height problemhttps://piazza.com/class/kk3y4me0cu05v7?cid=1330 
+
+- try to set a default height for the card.
+
+Full Cast & Crew Mobile Behavior
+
+- There is a horizontal scrollbar used for this and this is how the cards are sliding from left to right. 
 

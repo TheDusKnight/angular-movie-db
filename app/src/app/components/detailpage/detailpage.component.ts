@@ -85,7 +85,6 @@ export class DetailpageComponent implements OnInit {
     }
   }
 
-
   fetchDetail() {
     this.detailService.getVideo(this.type, this.id).subscribe(result => {
         this.video = result['results'][0];

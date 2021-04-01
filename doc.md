@@ -76,3 +76,4 @@ Should the review header in the detail page be displayed as the following or sho
 
 # @1292 We are not allow to use @media????? 
 
+TODO: footer, search, 

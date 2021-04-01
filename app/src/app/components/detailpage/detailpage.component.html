@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <h4 *ngIf="reviews.length > 0" class="mt-4">Reviews {{reviews.length}}</h4>
+  <h4 *ngIf="reviews.length > 0" class="mt-4">Reviews <span style="color:rgb(94, 101, 118)">{{reviews.length}}</span></h4>
   <div *ngFor="let review of reviews">
   <!-- {{review.author}} -->
   <!-- border-radius:1%; -->
@@ -91,5 +91,11 @@
     </div>
   </div>
   </div>
+
+  <!-- TODO: -->
+  <!-- <h2 class="pl-5 pl-md-0 my-3 my-md-0">Popular Movies</h2>
+  <app-carousel-card [data]='recommendations'></app-carousel-card>
+  <h2 class="pl-5 pl-md-0 my-3 my-md-0">Top Rated Movies</h2>
+  <app-carousel-card [data]='similars'></app-carousel-card> -->
 
 </div>

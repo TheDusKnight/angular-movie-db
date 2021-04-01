@@ -16,6 +16,9 @@ export class DetailpageComponent implements OnInit {
   public video = <any> {};
   public detail = <any> {};
   public casts: any = [];
+  public reviews: any = [];
+  public recommendations: any = [];
+  public similars: any = [];
   public escapeName:string;
   public escapeURL:string;
   public escapeKey:string;
@@ -94,6 +97,15 @@ export class DetailpageComponent implements OnInit {
     })
     this.detailService.getCast(this.type, this.id).subscribe(result => {
       this.casts = result['results'];
+    })
+    this.detailService.getReview(this.type, this.id).subscribe(result => {
+      this.reviews = result['results'];
+    })
+    this.detailService.getRecommend(this.type, this.id).subscribe(result => {
+      this.recommendations= result['results'];
+    })
+    this.detailService.getSimilar(this.type, this.id).subscribe(result => {
+      this.similars = result['results']
     })
     this.detailService.getDetail(this.type, this.id).subscribe(result => {
         this.detail = result['results'][0];

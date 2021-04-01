@@ -15,6 +15,7 @@ export class DetailpageComponent implements OnInit {
   public id:string;
   public video = <any> {};
   public detail = <any> {};
+  public casts: any = [];
   public escapeName:string;
   public escapeURL:string;
   public escapeKey:string;
@@ -90,6 +91,9 @@ export class DetailpageComponent implements OnInit {
         this.video = result['results'][0];
         this.escapeURL = escape("https://youtube.com/watch?v=" + this.video.key + '\n');
         this.escapeKey = escape(this.video.key);
+    })
+    this.detailService.getCast(this.type, this.id).subscribe(result => {
+      this.casts = result['results'];
     })
     this.detailService.getDetail(this.type, this.id).subscribe(result => {
         this.detail = result['results'][0];

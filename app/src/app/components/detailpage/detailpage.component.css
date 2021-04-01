@@ -11,7 +11,8 @@ p {
 
 .card {
   /* height: 300px; */
-  width: 200px;
+  /* width: 300px; */
+  width: 300px;
   margin-right: 10px;
   margin-bottom: 5px;
 }
@@ -22,11 +23,11 @@ p {
   object-fit: cover;
 }
 
-/* .card-text {
+.card-text {
   bottom: 0px;
   position: relative;
   color: black;
-} */
+}
 
 
 .card-footer {

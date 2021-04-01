@@ -119,20 +119,34 @@
         </div>
     </div>
 </div> -->
-<!-- <div class="card card-body">
+  <!-- <div class="card card-body">
   <img class="card-img-top" src="https://image.tmdb.org/t/p/w500//mbMsmQE5CyMVTIGMGCw2XpcPCOc.jpg" alt="Card image cap">
 
 </div> -->
 
-  <div class="container-fluid py-2  overflow-auto">
+  <div class="container-fluid py-2 overflow-auto">
     <h2 class="font-weight-light">Bootstrap 4 Horizontal Scrolling Cards with Flexbox</h2>
     <div class="d-flex flex-row flex-nowrap">
-      <div class="card">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500//mbMsmQE5CyMVTIGMGCw2XpcPCOc.jpg" alt="Card image cap">
-        <div class="card-body">
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <div *ngFor="let cast of casts">
+        <div class="card text-center">
+          <img class="card-img-top" src="{{cast.profile_path}}"
+            alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">{{cast.name}}</p>
+            <p class="card-text">AS</p>
+            <p class="card-text">{{cast.character}}</p>
+            
+          </div>
         </div>
       </div>
+      <!-- <div class="card">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500//mbMsmQE5CyMVTIGMGCw2XpcPCOc.jpg"
+          alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div> -->
 
       <!-- <div class="card card-body">Card</div>
       <div class="card card-body">Card</div>

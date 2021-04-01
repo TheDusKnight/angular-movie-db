@@ -14,7 +14,7 @@ html,body{
   width: 1em;
 } */
 
-ngb-popover-window {
+::ng-deep ngb-popover-window {
   position: absolute;
   width: auto !important;
   display: block !important;

@@ -1,29 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DetailService } from '../../services/detail.service';
 
 @Component({
   selector: 'app-cast-content',
   // templateUrl: './cast-content.component.html',
-  template: `
-  <div class="modal-header">
-  <h4 class="modal-title" style="color:black;">{{name}}</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body" style="color:black;">
-  <div class="row">
-    <div class="col-2">
-      <img src="{{profile_path}}">
-    </div>
-
-      <p>hello</p>
-
-  </div>
-
-</div>
-  `
+  templateUrl: './template.html',
+  encapsulation: ViewEncapsulation.None,
+  styles: [``],
 })
 export class CastContent {
   @Input() name;
@@ -49,8 +33,9 @@ export class CastComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  open() {
-    const modalRef = this.modalService.open(CastContent);
+  openScrollableContent() {
+    
+    const modalRef = this.modalService.open(CastContent, {size: 'lg', scrollable: true});
     // this.fetchCastInfo();
     // modalRef.componentInstance.name = this.castDetail.name;
     // console.log(this.castDetail);

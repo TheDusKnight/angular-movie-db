@@ -180,6 +180,7 @@ function getCastDetail(url, res) {
     o[key] = [];
     const result = response.data;
     const data = {
+      profile_path: `https://image.tmdb.org/t/p/w500/${result.profile_path}` || null,
       birthday: result.birthday || null,
       gender: result.gender || null,
       name: result.name || null,

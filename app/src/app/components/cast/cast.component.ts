@@ -4,26 +4,30 @@ import { DetailService } from '../../services/detail.service';
 
 @Component({
   selector: 'app-cast-content',
+  // templateUrl: './cast-content.component.html',
   template: `
-    <div class="modal-header">
-      <h4 class="modal-title" style="color:black;">{{name}}</h4>
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+  <div class="modal-header">
+  <h4 class="modal-title" style="color:black;">{{name}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body" style="color:black;">
+  <div class="row">
+    <div class="col-2">
+      <img src="{{profile_path}}">
     </div>
-    <div class="modal-body" style="color:black;">
-      <div class="col-8">
 
-      </div>
-      <div class="col-4">
-        
-      </div>
       <p>hello</p>
-    </div>
+
+  </div>
+
+</div>
   `
 })
 export class CastContent {
   @Input() name;
+  @Input() profile_path;
   constructor(public activeModal: NgbActiveModal) {}
 }
 
@@ -54,10 +58,16 @@ export class CastComponent implements OnInit {
     this.detailService.getCastDetail(this.cast.id).subscribe(result => {
       this.castDetail = result['results'][0];
       modalRef.componentInstance.name = this.castDetail.name;
+      modalRef.componentInstance.profile_path = this.castDetail.profile_path;
       modalRef.componentInstance.birthday = this.castDetail.birthday;
       modalRef.componentInstance.place_of_birth = this.castDetail.place_of_birth;
       modalRef.componentInstance.gender = this.castDetail.gender;
-      modalRef.componentInstance.birthday = this.castDetail.birthday;
+      modalRef.componentInstance.known_for_department = this.castDetail.known_for_department;
+      modalRef.componentInstance.also_known_as = this.castDetail.also_known_as;
+      modalRef.componentInstance.homepage = this.castDetail.homepage;
+      modalRef.componentInstance.biography = this.castDetail.biography;
+
+
 
     })
   }

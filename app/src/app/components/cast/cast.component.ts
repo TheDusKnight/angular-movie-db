@@ -7,7 +7,7 @@ import { DetailService } from '../../services/detail.service';
   // templateUrl: './cast-content.component.html',
   templateUrl: './template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [``],
+  styles: [`@media screen and (min-width: 601px) {#cast-img {width:100%; height:auto;}}`],
 })
 export class CastContent {
   @Input() name;
@@ -35,7 +35,7 @@ export class CastComponent implements OnInit {
 
   openScrollableContent() {
     
-    const modalRef = this.modalService.open(CastContent, {size: 'lg', scrollable: true});
+    const modalRef = this.modalService.open(CastContent, {size: 'xl', scrollable: true});
     // this.fetchCastInfo();
     // modalRef.componentInstance.name = this.castDetail.name;
     // console.log(this.castDetail);

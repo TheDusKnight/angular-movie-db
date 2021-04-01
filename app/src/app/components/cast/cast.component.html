@@ -1,4 +1,21 @@
-<div (click)="openScrollableContent()" style="cursor:pointer">
+<ng-template #longContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-popover></app-popover>
+  </div>
+</ng-template>
+
+
+<!-- <div (click)="openScrollableContent(longContent)" style="cursor: pointer;">
+  
+</div> -->
+
+<div (click)="openScrollableContent(longContent)" style="cursor:pointer">
   <div class="card text-center">
     <div class="my-img">
       <img class="card-img-top" src="{{cast.profile_path}}" alt="Card image cap">
@@ -17,5 +34,3 @@
 </div>
 
 
-
-<!-- <p (click)="open()"> click me</p> -->

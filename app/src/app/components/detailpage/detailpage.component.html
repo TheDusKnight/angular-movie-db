@@ -4,20 +4,11 @@
 {{video.key}}
 {{detail.name}}
 
-<!-- <youtube-player
-  videoId={{video.key}}
-  suggestedQuality="highres" 
-  [height]="400" 
-  [width]="700" >
-</youtube-player> -->
-
 <div class="container">
   <div class="row">
     <!-- TODO: improve text display -->
     <div class="col-sm-8">
       <div class="embed-responsive embed-responsive-16by9">
-        <!-- <iframe class="embed-responsive-item" src="{{'https://www.youtube.com/embed/' + video.key}}"></iframe> -->
-        <!-- <iframe id="video" class="embed-responsive-item" src="https://www.youtube.com/embed/tzkWB85ULJY"></iframe> -->
         <youtube-player videoId={{video.key}}> </youtube-player>
       </div>
     </div>
@@ -66,137 +57,25 @@
     </div>
   </div>
 
-  <!-- <div class="container-fluid">
-    <h2>Bootstrap Horizontal Scrolling with Flexbox</h2>
-    <div class="row flex-nowrap">
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-        <div class="col-3">
-            <div class="card card-block">Card</div>
-        </div>
-    </div>
-</div> -->
-  <!-- <div class="card card-body">
-  <img class="card-img-top" src="https://image.tmdb.org/t/p/w500//mbMsmQE5CyMVTIGMGCw2XpcPCOc.jpg" alt="Card image cap">
-
-</div> -->
-
   <div class="container-fluid py-2 overflow-auto">
-    <h2 class="font-weight-light">Bootstrap 4 Horizontal Scrolling Cards with Flexbox</h2>
     <div class="d-flex flex-row flex-nowrap">
       <div *ngFor="let cast of casts">
         <div class="card text-center">
           <img class="card-img-top" src="{{cast.profile_path}}"
             alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">{{cast.name}}</p>
-            <p class="card-text">AS</p>
-            <p class="card-text">{{cast.character}}</p>
-            
-          </div>
+            <!-- TODO: fix img height issue -->
+          <!-- <div class="card-body"> -->
+              <p class="card-text" style="font-size:0.9rem; color:black;">
+                <span style="font-weight:bold">{{cast.name}}</span>
+                <br>
+                <span style="font-weight:bolder">AS</span>
+                <br>
+                {{cast.character}}
+              </p>
+          <!-- </div> -->
         </div>
       </div>
-      <!-- <div class="card">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500//mbMsmQE5CyMVTIGMGCw2XpcPCOc.jpg"
-          alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-      </div> -->
-
-      <!-- <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div>
-      <div class="card card-body">Card</div> -->
     </div>
   </div>
   <!-- </div> -->
 </div>
-
-
-
-<!-- <div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins agosdflajsfl;sajfl;asjf;lsajf;lssdlfjas;ldfj;alsfjas;lfjsa;lfja;slfjas;lfjasl;fj;sdfj;lasfjl;asjf;lsjfl;sajfl;sjfl;dfj;lasdfjal;sfjas;lfjsa;lfj;ldfj;lasdjfl;asjfl;safjsa;lfjsa;lfsja;flsajf;lsjfls;fjsljfl;fjal;sfjsadfasfasfasdfasdfsadfasdfsadf</small>
-    </div>
-  </div>
-</div> -->

@@ -1,6 +1,6 @@
 <ng-template #longContent let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">Modal title</h4>
+  <div class="modal-header" style="color:black;">
+    <h4 class="modal-title">{{castDetail.name}}</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -16,15 +16,17 @@
           <p *ngIf="castDetail.birthday" style="margin-bottom:0px;">Birth: {{castDetail.birthday}}</p>
           <p *ngIf="castDetail.place_of_birth" style="margin-bottom:0px;">Birth Place: {{castDetail.place_of_birth}}</p>
           <p style="margin-bottom:0px;">Gender: {{castDetail.gender}}</p>
-          <p style="margin-bottom:0px;">Website:  <a *ngIf="castDetail.homepage" href="{{castDetail.homepage}}" style="margin-bottom:0px;" target="_blank">{{castDetail.homepage}}</a></p>
+          <p *ngIf="castDetail.homepage" style="margin-bottom:0px;">Website:  <a  href="{{castDetail.homepage}}" style="margin-bottom:0px;" target="_blank">{{castDetail.homepage}}</a></p>
           <p *ngIf="castDetail.known_for_department" style="margin-bottom:0px;">Known for: {{castDetail.known_for_department}}</p>
-          <p *ngIf="castDetail.also_known_as" style="margin-bottom:0px;">Also Known for: {{castDetail.also_known_as}}</p>
+          <p *ngIf="castDetail.also_known_as.length > 0" style="margin-bottom:0px;">Also Known for: {{castDetail.also_known_as}}</p>
+          <a target="_blank" *ngIf="castExternal.imdb_id" href="{{castExternal.imdb_id}}" class="fa fa-imdb fa-2x" ngbPopover="Visit TMDB" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
+
+          <a target="_blank" *ngIf="castExternal.instagram_id" href="{{castExternal.instagram_id}}" class="fa fa-instagram fa-2x" ngbPopover="Visit Instagram" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
+          <a target="_blank" *ngIf="castExternal.facebook_id" href="{{castExternal.facebook_id}}" class="fa fa-facebook fa-2x" ngbPopover="Visit Facebook" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
+          <a target="_blank" *ngIf="castExternal.twitter_id" href="{{castExternal.twitter_id}}" class="fa fa-twitter fa-2x" ngbPopover="Visit Twitter" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
         </div>
-        <p>{{castDetail.biography}}</p>
+        <p><span style="font-size:2rem">Birography</span> <br>{{castDetail.biography}}</p>
       </div>
-    </div>
-    <div class="container">
-      <app-popover></app-popover>
     </div>
   </div>
 </ng-template>

@@ -207,10 +207,10 @@ function getCastExternal(url, res) {
     o[key] = [];
     const result = response.data;
     const data = {
-      imdb_id: result.imdb_id ? `imdb.com/name/${result.imdb_id}` : null,
-      facebook_id: result.facebook_id ? `facebook.com/${result.facebook_id}` : null,
-      instagram_id: result.instagram_id ? `instagram.com/${result.instagram_id}` : null,
-      twitter_id: result.twitter_id ? `twitter.com/${result.twitter_id}` : null,
+      imdb_id: result.imdb_id ? `https://imdb.com/name/${result.imdb_id}` : null,
+      facebook_id: result.facebook_id ? `https://facebook.com/${result.facebook_id}` : null,
+      instagram_id: result.instagram_id ? `https://instagram.com/${result.instagram_id}` : null,
+      twitter_id: result.twitter_id ? `https://twitter.com/${result.twitter_id}` : null,
     };
     o[key].push(data);
     o.total = o[key].length;

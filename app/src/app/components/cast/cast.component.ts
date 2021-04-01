@@ -28,6 +28,9 @@ export class CastComponent implements OnInit {
       this.castDetail = result['results'][0];
       this.castDetail.gender = (this.castDetail.gender == "2" ? "Male" : "Female");
     })
+    this.detailService.getCastExternal(this.cast.id).subscribe(result => {
+      this.castExternal = result['results'][0];
+    })
   }
 
   // openScrollableContent() {

@@ -6,17 +6,19 @@ import { DetailService } from '../../services/detail.service';
   selector: 'app-cast-content',
   template: `
     <div class="modal-header">
-      <h4 class="modal-title" style="color:black;">Hi there!</h4>
+      <h4 class="modal-title" style="color:black;">{{name}}</h4>
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body" style="color:black;">
-      <p>Hello, {{name}}!</p>
-    </div>
-    
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+      <div class="col-8">
+
+      </div>
+      <div class="col-4">
+        
+      </div>
+      <p>hello</p>
     </div>
   `
 })
@@ -32,7 +34,7 @@ export class CastContent {
 })
 export class CastComponent implements OnInit {
   @Input() cast: any = {}
-  public castDetail: any = {}
+  public castDetail: any = {} // ??
   public castExternal: any = {}
 
   constructor(
@@ -45,19 +47,30 @@ export class CastComponent implements OnInit {
 
   open() {
     const modalRef = this.modalService.open(CastContent);
-    this.fetchCastInfo();
-    modalRef.componentInstance.name = this.castDetail.name;
-    console.log(this.castDetail);
+    // this.fetchCastInfo();
+    // modalRef.componentInstance.name = this.castDetail.name;
+    // console.log(this.castDetail);
+
+    this.detailService.getCastDetail(this.cast.id).subscribe(result => {
+      this.castDetail = result['results'][0];
+      modalRef.componentInstance.name = this.castDetail.name;
+      modalRef.componentInstance.birthday = this.castDetail.birthday;
+      modalRef.componentInstance.place_of_birth = this.castDetail.place_of_birth;
+      modalRef.componentInstance.gender = this.castDetail.gender;
+      modalRef.componentInstance.birthday = this.castDetail.birthday;
+
+    })
   }
 
-  public fetchCastInfo() {
-    this.detailService.getCastDetail(this.cast.id).subscribe(result => {
-      this.castDetail = result['results'];
-      // console.log(this.castDetail)
-    })
-    this.detailService.getCastExternal(this.cast.id).subscribe(result => {
-      this.castExternal = result['results'];
-    })
-  }
+  // TODO: 为什么这样写不对?
+  // public fetchCastInfo() {
+  //   this.detailService.getCastDetail(this.cast.id).subscribe(result => {
+  //     this.castDetail = result['results'][0];
+  //     // console.log(this.castDetail)
+  //   })
+  //   this.detailService.getCastExternal(this.cast.id).subscribe(result => {
+  //     this.castExternal = result['results'][0];
+  //   })
+  // }
 }
 

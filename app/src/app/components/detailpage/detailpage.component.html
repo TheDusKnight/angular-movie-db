@@ -64,22 +64,28 @@
     </div>
   </div>
 
-  <h4 class="mt-4">Reviews</h4>
+  <h4 *ngIf="reviews.length > 0" class="mt-4">Reviews {{reviews.length}}</h4>
   <div *ngFor="let review of reviews">
   <!-- {{review.author}} -->
   <!-- border-radius:1%; -->
   <div class="card m-2" style="width:95%;"> 
     <div class="card-body">
       <div class="row">
-        <div class="col-2">
+        <div class="col-lg-2 pb-2">
           <img *ngIf="review.avatar_path" src="{{review.avatar_path}}" alt="" class="center" style="border-radius:50%;max-width: 80px;height:auto;">
         </div>
-        <div class="col-10">
-          <h5 *ngIf="review.author" class="card-title" style="color:black;">A review created by {{review.author}} &nbsp;<i class="fas fa-star" style="background-color: black; color:white;border-radius:25px;padding:5px;">{{review.rating}}</i></h5>
+        <div class="col-lg-10">
+          <div class="card-title">
+            <div class="row">
+              <h5 *ngIf="review.author" style="color:black;margin-bottom:0;">A review created by {{review.author}} &nbsp;
+              </h5>
+              <i class="fas fa-star" style="background-color: black; color:white;border-radius:15px;padding:5px;">{{review.rating}}</i>
+            </div>
+          </div>
           <br>
           <h6 *ngIf="review.created_at" class="card-subtitle mb-2 text-muted">Written by {{review.author}} on {{review.created_at}}</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
+          <p class="card-text text-overflow" style="font-size: 14px;">{{review.content}}</p>
+          <a target="_blank" href="{{review.url}}" class="" style="text-decoration: underline;font-size: 14px;color: rgb(100, 100, 194)">Read the rest</a>
         </div>
       </div>
     </div>

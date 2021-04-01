@@ -6,19 +6,29 @@
 <!-- <div *ngFor="let currentPlaying of currentPlayings">
   <a [routerLink]="['watch/movie/', currentPlaying.id]">{{currentPlaying.id}}</a>
 </div> -->
-<div class="my-container mx-sm-0 mx-md-1 mx-lg-3 mx-xl-5">
+<div *ngIf="device !== 'XSmall'" class="my-container mx-sm-0 mx-md-1 mx-lg-3 mx-xl-5">
   <ngb-carousel #carousel [interval]="5000" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
     (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">
       <a [routerLink]="['watch/movie/', currentPlaying.id]">
-        <div *ngIf="device !== 'XSmall'" class="my-div">
+        <div class="my-div">
           <div class="carousel-caption">
             <h6>{{currentPlaying.name}}
             </h6>
           </div>
           <img [src]="currentPlaying.backdrop_path" alt="My image {{i + 1}} description">
         </div>
-        <div *ngIf="device === 'XSmall'" class="hold-div">
+      </a>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<div *ngIf="device === 'XSmall'" class="my-container mx-sm-0 mx-md-1 mx-lg-3 mx-xl-5">
+  <ngb-carousel #carousel [interval]="5000" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="false" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+    (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let currentPlaying of currentPlayings; index as i">
+      <a [routerLink]="['watch/movie/', currentPlaying.id]">
+        <div class="hold-div">
           <div class="carousel-caption">
             <p>{{currentPlaying.name}}
             <p>
@@ -33,3 +43,4 @@
   <button type="button" (click)="showNavigationArrows = !showNavigationArrows" class="btn btn-outline-dark btn-sm">Toggle navigation arrows</button>
   <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Toggle navigation indicators</button>
 </div> -->
+

@@ -20,6 +20,7 @@ import { AlertSelfclosingComponent } from './components/alert-selfclosing/alert-
 import { CastComponent } from './components/cast/cast.component';
 import { PopoverComponent } from './components/popover/popover.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ReviewComponent } from './components/review/review.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ModalComponent } from './components/modal/modal.component';
     CastComponent,
     PopoverComponent,
     ModalComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,

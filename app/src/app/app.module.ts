@@ -18,6 +18,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { MylistpageComponent } from './components/mylistpage/mylistpage.component';
 import { AlertSelfclosingComponent } from './components/alert-selfclosing/alert-selfclosing.component';
 import { CastComponent } from './components/cast/cast.component';
+import { PopoverComponent } from './components/popover/popover.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CastComponent } from './components/cast/cast.component';
     FooterComponent,
     AlertSelfclosingComponent,
     CastComponent,
+    PopoverComponent,
   ],
   imports: [
     BrowserModule,

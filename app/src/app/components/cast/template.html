@@ -17,10 +17,14 @@
           <p style="margin-bottom:0px;">{{place_of_birth}}</p>
           <p style="margin-bottom:0px;">{{gender}}</p>
           <!-- <p style="margin-bottom:0px;">{{homepage}}</p> -->
-          <a href="{{homepage}}" style="margin-bottom:0px;">{{homepage}}</a>
+          <!-- <a href="{{homepage}}" style="margin-bottom:0px;">{{homepage}}</a> -->
           <p style="margin-bottom:0px;">{{known_for_department}}</p>
           <p style="margin-bottom:0px;">{{also_known_as}}</p>
         </div>
+
+        <button type="button" class="btn btn-outline-secondary" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave">
+          Hover over me!
+        </button>
         <p>{{biography}}</p>
       </div>
     </div>

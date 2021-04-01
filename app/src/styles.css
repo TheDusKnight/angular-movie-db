@@ -13,6 +13,15 @@ html,body{
   height: 1em;
   width: 1em;
 } */
+
+ngb-popover-window {
+  position: absolute;
+  width: auto !important;
+  display: block !important;
+  background-color: #fafafa !important;
+  border: 1px solid #fafafa !important;
+  max-width: none !important;
+}
  
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);

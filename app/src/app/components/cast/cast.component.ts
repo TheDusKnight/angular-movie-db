@@ -12,6 +12,13 @@ import { DetailService } from '../../services/detail.service';
 export class CastContent {
   @Input() name;
   @Input() profile_path;
+  @Input() birthday;
+  @Input() place_of_birth;
+  @Input() gender;
+  @Input() known_for_department;
+  @Input() also_known_as;
+  @Input() homepage;
+  @Input() biography;
   constructor(public activeModal: NgbActiveModal) {}
 }
 
@@ -42,18 +49,15 @@ export class CastComponent implements OnInit {
 
     this.detailService.getCastDetail(this.cast.id).subscribe(result => {
       this.castDetail = result['results'][0];
-      modalRef.componentInstance.name = this.castDetail.name;
-      modalRef.componentInstance.profile_path = this.castDetail.profile_path;
-      modalRef.componentInstance.birthday = this.castDetail.birthday;
-      modalRef.componentInstance.place_of_birth = this.castDetail.place_of_birth;
-      modalRef.componentInstance.gender = this.castDetail.gender;
-      modalRef.componentInstance.known_for_department = this.castDetail.known_for_department;
-      modalRef.componentInstance.also_known_as = this.castDetail.also_known_as;
-      modalRef.componentInstance.homepage = this.castDetail.homepage;
-      modalRef.componentInstance.biography = this.castDetail.biography;
-
-
-
+      modalRef.componentInstance.name = this.castDetail.name || null;
+      modalRef.componentInstance.profile_path = this.castDetail.profile_path || null;
+      modalRef.componentInstance.birthday = this.castDetail.birthday ? "Birth: " + this.castDetail.birthday : null;
+      modalRef.componentInstance.place_of_birth = this.castDetail.place_of_birth ? "Birth Place: " + this.castDetail.place_of_birth : null;
+      modalRef.componentInstance.gender = "Gender " + (this.castDetail.gender == "2" ? "Male" : "Female");
+      modalRef.componentInstance.known_for_department = this.castDetail.known_for_department ? "Known for: " + this.castDetail.known_for_department : null;
+      modalRef.componentInstance.also_known_as = this.castDetail.also_known_as ? "Also Known as: " + this.castDetail.also_known_as : null;
+      modalRef.componentInstance.homepage = this.castDetail.homepage ? "Website" + this.castDetail.homepage : null;
+      modalRef.componentInstance.biography = this.castDetail.biography || null;
     })
   }
 

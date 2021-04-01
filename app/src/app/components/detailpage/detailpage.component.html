@@ -20,7 +20,6 @@
       <p>Genres: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.genres}}</span></p>
       <p>Spoken Language: <span style="font-weight: light; color: rgb(145,151,183)">{{detail.spoken_languages}}</span>
       </p>
-      <!-- <button type="button" class="btn btn-primary btn-lg mt-2" data-toggle="popover">Add to Watchlist</button> -->
       <p>
         <button id="watchlist" class="btn btn-primary" (click)="addRemoveMessage()">{{watchButton}}</button>
       </p>
@@ -32,7 +31,6 @@
       </ngb-alert>
     </div>
   </div>
-  <!-- <div class="container"> -->
   <h4 class="mt-4">Description</h4>
   <p style="font-weight: lighter; color: rgb(145,151,183)">{{detail.overview}}</p>
   <h4 class="mt-4">Share</h4>
@@ -61,21 +59,24 @@
     <div class="d-flex flex-row flex-nowrap">
       <div *ngFor="let cast of casts">
         <div class="card text-center">
-          <img class="card-img-top" src="{{cast.profile_path}}"
-            alt="Card image cap">
-            <!-- TODO: fix img height issue -->
+          <div class="my-img">
+            <img class="card-img-top" src="{{cast.profile_path}}" alt="Card image cap">
+          </div>
+          <!-- TODO: fix img height issue -->
           <!-- <div class="card-body"> -->
-              <p class="card-text" style="font-size:0.9rem; color:black;">
-                <span style="font-weight:bold">{{cast.name}}</span>
-                <br>
-                <span style="font-weight:bolder">AS</span>
-                <br>
-                {{cast.character}}
-              </p>
+          <p class="card-text" style="font-size:0.9rem; color:black;">
+            <span style="font-weight:bolder">{{cast.name}}</span>
+            <br>
+            <span style="font-weight:bolder">AS</span>
+            <br>
+            {{cast.character}}
+          </p>
           <!-- </div> -->
         </div>
       </div>
     </div>
   </div>
-  <!-- </div> -->
+
+  <h4 class="mt-4">Reviews</h4>
+
 </div>

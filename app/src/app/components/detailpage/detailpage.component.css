@@ -2,6 +2,10 @@ p {
   font-size: 1.2rem;
 }
 
+/* .my-img {
+  height:300px;
+} */
+
 /* .card-body {
   height: 300px;
   min-width: 200px;
@@ -30,11 +34,11 @@ p {
 }
 
 
-.card-footer {
+/* .card-footer {
   padding: .75rem 1.25rem;
   background-color: rgba(0,0,0,.0);
   border-top: none;
-}
+} */
 
 .fa {
   color: #efefef;

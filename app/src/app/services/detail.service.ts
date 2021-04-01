@@ -29,7 +29,7 @@ export class DetailService {
     return this.http.get(castDetailURL)
   }
   getCastExternal(id: string) {
-    let castExternalURL = this.host + 'cast/external' + id;
+    let castExternalURL = this.host + 'cast/external/' + id;
     return this.http.get(castExternalURL)
   }
   getRecommend(type: string, id: string) {

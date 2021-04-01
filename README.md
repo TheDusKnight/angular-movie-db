@@ -77,3 +77,24 @@ Full Cast & Crew Mobile Behavior
 - There is a horizontal scrollbar used for this and this is how the cards are sliding from left to right. 
 
 # [Horizontally scrollable list of cards in Bootstrap](https://stackoverflow.com/questions/35993300/horizontally-scrollable-list-of-cards-in-bootstrap)
+
+
+
+``` typescript
+<div class="card text-center">
+  <div class="my-img">
+    <img class="card-img-top" src="{{cast.profile_path}}" alt="Card image cap">
+  </div>
+  <!-- TODO: fix img height issue -->
+  <!-- <div class="card-body"> -->
+  <p class="card-text" style="font-size:0.9rem; color:black;">
+    <span style="font-weight:bolder">{{cast.name}}</span>
+    <br>
+    <span style="font-weight:bolder">AS</span>
+    <br>
+    {{cast.character}}
+  </p>
+  <!-- </div> -->
+</div>
+```
+

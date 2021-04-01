@@ -9,44 +9,31 @@ html,body{
   font-family: 'Raleway', sans-serif;
 }
 
-/* @include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
+/* body::-webkit-scrollbar {
+  height: 1em;
+  width: 1em;
+} */
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
 }
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
+ 
+/* body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 } */
 
-/* @media(min-width: 1920px)
-{
-  html{
-    font-size:1.6rem;
-  }
+::-webkit-scrollbar{
+  height: 8px;
+  width: 8px;
+  /* overflow: visible; */
+  background: #000;
 }
-
-@media(min-width: 1280px)
-{
-  html{
-    font-size:1.4rem;
-  }
+::-webkit-scrollbar-thumb{
+  /* background: #000; */
+  background-color: darkgrey;
+  border-radius: 10px;
 }
-
-@media(min-width: 960px)
-{
-  html{
-    font-size:1.2rem;
-  }
-} */
 
 /* If more than 600px */
 @media(min-width: 600px)

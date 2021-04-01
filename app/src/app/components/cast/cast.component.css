@@ -1,0 +1,41 @@
+p {
+  font-size: 1.2rem;
+}
+
+/* .my-img {
+  height:300px;
+} */
+
+/* .card-body {
+  height: 300px;
+  min-width: 200px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+} */
+
+.card {
+  /* height: 300px; */
+  /* width: 300px; */
+  width: 180px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.card-img-top {
+  width: 100%;
+  /* height: 300px; */
+  object-fit: cover;
+}
+
+.card-text {
+  bottom: 0px;
+  position: relative;
+  color: black;
+}
+
+
+/* .card-footer {
+  padding: .75rem 1.25rem;
+  background-color: rgba(0,0,0,.0);
+  border-top: none;
+} */

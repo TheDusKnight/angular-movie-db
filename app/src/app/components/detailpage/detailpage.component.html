@@ -58,21 +58,7 @@
   <div class="container-fluid py-2 overflow-auto">
     <div class="d-flex flex-row flex-nowrap">
       <div *ngFor="let cast of casts">
-        <div class="card text-center">
-          <div class="my-img">
-            <img class="card-img-top" src="{{cast.profile_path}}" alt="Card image cap">
-          </div>
-          <!-- TODO: fix img height issue -->
-          <!-- <div class="card-body"> -->
-          <p class="card-text" style="font-size:0.9rem; color:black;">
-            <span style="font-weight:bolder">{{cast.name}}</span>
-            <br>
-            <span style="font-weight:bolder">AS</span>
-            <br>
-            {{cast.character}}
-          </p>
-          <!-- </div> -->
-        </div>
+        <app-cast [cast]="cast"></app-cast>
       </div>
     </div>
   </div>

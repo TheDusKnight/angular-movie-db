@@ -65,3 +65,14 @@ Image Overlay Slide https://www.w3schools.com/howto/howto_css_image_overlay_slid
 # [How to hide part of the image?](https://stackoverflow.com/questions/11092146/how-to-hide-part-of-the-image)
 
 [Ask Question](https://stackoverflow.com/questions/ask)
+
+# Reviews 
+
+Max 10 reviews
+
+Should the review header in the detail page be displayed as the following or should it be hidden when no reviews are available? **It should be hidden.**
+
+
+
+# @1292 We are not allow to use @media????? 
+

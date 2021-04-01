@@ -3,7 +3,7 @@
 {{type}}
 {{video.key}}
 {{detail.name}}
-
+<!-- {{reviews}} -->
 
 <div class="container">
   <div class="row">
@@ -65,5 +65,25 @@
   </div>
 
   <h4 class="mt-4">Reviews</h4>
+  <div *ngFor="let review of reviews">
+  <!-- {{review.author}} -->
+  <!-- border-radius:1%; -->
+  <div class="card m-2" style="width:95%;"> 
+    <div class="card-body">
+      <div class="row">
+        <div class="col-2">
+          <img *ngIf="review.avatar_path" src="{{review.avatar_path}}" alt="" style="border-radius:100%;max-width: 80px;height:auto;">
+        </div>
+        <div class="col-10">
+          <h5 *ngIf="review.author" class="card-title" style="color:black;">A review created by {{review.author}} <i class="fas fa-star" style="background-color: black; color:white;border-radius:10px;padding:4px;">{{review.rating}}</i></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
 
 </div>

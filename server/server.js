@@ -186,7 +186,9 @@ function getCastDetail(url, res) {
       name: result.name || null,
       place_of_birth: result.place_of_birth || null,
       homepage: result.homepage || null,
+      // also_known_as: (result.also_known_as && result.also_known_as.length > 0) || null,
       also_known_as: result.also_known_as || null,
+      // eslint-disable-next-line max-len
       known_for_department: result.known_for_department || null,
       biography: result.biography ? result.biography.replace(/(\r\n|\n|\r)/gm, '') : null,
     };

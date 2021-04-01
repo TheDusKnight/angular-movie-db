@@ -26,6 +26,7 @@ export class CastComponent implements OnInit {
     this.modalService.open(longContent, { scrollable: true, size: 'xl' });
     this.detailService.getCastDetail(this.cast.id).subscribe(result => {
       this.castDetail = result['results'][0];
+      this.castDetail.gender = (this.castDetail.gender == "2" ? "Male" : "Female");
     })
   }
 

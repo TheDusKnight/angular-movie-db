@@ -6,7 +6,26 @@
     </button>
   </div>
   <div class="modal-body" style="color:black;">
-    <app-popover></app-popover>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3" style="padding:0;">
+          <img id="cast-img" src="{{castDetail.profile_path}}" style="width:100%; height:auto;" class="float-left">
+        </div>
+        <div class="col-sm">
+          <!-- <p class="text-left">hello cool </p> -->
+          <p *ngIf="castDetail.birthday" style="margin-bottom:0px;">Birth: {{castDetail.birthday}}</p>
+          <p *ngIf="castDetail.place_of_birth" style="margin-bottom:0px;">Birth Place: {{castDetail.place_of_birth}}</p>
+          <p style="margin-bottom:0px;">Gender: {{castDetail.gender}}</p>
+          <p style="margin-bottom:0px;">Website:  <a *ngIf="castDetail.homepage" href="{{castDetail.homepage}}" style="margin-bottom:0px;" target="_blank">{{castDetail.homepage}}</a></p>
+          <p *ngIf="castDetail.known_for_department" style="margin-bottom:0px;">Known for: {{castDetail.known_for_department}}</p>
+          <p *ngIf="castDetail.also_known_as" style="margin-bottom:0px;">Also Known for: {{castDetail.also_known_as}}</p>
+        </div>
+        <p>{{castDetail.biography}}</p>
+      </div>
+    </div>
+    <div class="container">
+      <app-popover></app-popover>
+    </div>
   </div>
 </ng-template>
 

@@ -14,7 +14,7 @@ export class CollapseNavbarComponent implements OnInit {
   // appear initially when the page loads on a small screen!
   public isMenuCollapsed = true;
   changeHide(val: boolean) {
-    this.isMenuCollapsed = false;
+    this.isMenuCollapsed = val;
   }
   
   route: string;

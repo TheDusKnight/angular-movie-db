@@ -41,6 +41,7 @@ export class DetailpageComponent implements OnInit {
     private router: Router
   ) { // reuse route logic
     // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    
    }
 
   // ngOnDestroy() {
@@ -48,10 +49,21 @@ export class DetailpageComponent implements OnInit {
   //     this.mySubscription.unsubscribe();
   //   }
   // }
-  ngOnChanges() {
-  }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+  //   //Add '${implements OnChanges}' to the class.
+  //   // this.route.params.subscribe(params => {
+  //   //   console.log(params['id']);
+  //   // })
+    
+  // }
 
   ngOnInit(): void {
+    // this.route.params.forEach(params => {
+    
+    // })
+
     const routeParams = this.route.snapshot.paramMap;
     // this.route.params.subscribe(params => {
     //   console.log(params['id']);

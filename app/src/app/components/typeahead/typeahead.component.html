@@ -13,7 +13,7 @@
   </div>
 </ng-template>
 
-<input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" placeholder="Search" [resultFormatter]="resultFormatBandListValue" [resultFormatter]="resultFormatBandListValue"/>
+<input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" placeholder="Search" [inputFormatter]="inputFormatBandListValue" [resultFormatter]="resultFormatBandListValue"/>
 <!-- <input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [resultFormatter]="resultFormatBandListValue"/> -->
 <!-- <pre>Model: {{ model | json }}</pre> -->
 

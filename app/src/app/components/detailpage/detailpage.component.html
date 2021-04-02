@@ -92,9 +92,9 @@
   </div>
   </div>
 
-  <h2 class="pl-5 pl-md-0 mt-5">Recommended Movies</h2>
+  <h2 *ngIf="recommendations.length > 0" class="pl-5 pl-md-0 mt-5">Recommended Movies</h2>
   <app-carousel-card [data]='recommendations'></app-carousel-card>
-  <h2 class="pl-5 pl-md-0 m5-3">Similar Movies</h2>
+  <h2 *ngIf="similars.length > 0" class="pl-5 pl-md-0 m5-3">Similar Movies</h2>
   <app-carousel-card [data]='similars'></app-carousel-card>
 
 </div>

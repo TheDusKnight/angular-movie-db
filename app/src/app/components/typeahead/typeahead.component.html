@@ -1,4 +1,4 @@
-<ng-template #rt let-r="result" let-t="term" style="background-color:dark;">
+<ng-template #rt let-r="result" let-t="term" style="">
   <div class="row align-left" style="font-size:1rem;">
     <!-- <div class="col-3">
       <img [src]="r['backdrop_path']" class="mr-1" style="width: 100px; height:auto;">
@@ -6,17 +6,22 @@
     <div class="col-9">
       <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
     </div> -->
-    <div>
-      <img [src]="r['backdrop_path']" class="mr-1" style="width: 100px; height:auto; float: left;">
-      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
-    </div>
+    <a [routerLink]="['/watch/', r.media_type, r.id]">
+      <div>
+        <img [src]="r['backdrop_path']" class="mr-1" style="width: 100px; height:auto; float: left;">
+        <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+      </div>
+    </a>
   </div>
 </ng-template>
-
-<input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" placeholder="Search" [inputFormatter]="inputFormatBandListValue" [resultFormatter]="resultFormatBandListValue"/>
+<div style="background-color: rgba(6,12,46);">
+  <input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search"
+    [resultTemplate]="rt" placeholder="Search" [inputFormatter]="inputFormatBandListValue"
+    [resultFormatter]="resultFormatBandListValue"/>
+</div>
 <!-- <input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [resultFormatter]="resultFormatBandListValue"/> -->
 <!-- <pre>Model: {{ model | json }}</pre> -->
 
-    <!-- <form class="form-inline  my-lg-0">
+<!-- <form class="form-inline  my-lg-0">
       <input class="form-control mr-sm-5" type="search" placeholder="Search" aria-label="Search">
     </form> -->

@@ -76,4 +76,4 @@ Should the review header in the detail page be displayed as the following or sho
 
 # @1292 We are not allow to use @media 2points penalty
 
-TODO: sticky footer and header, ajust cast list, reconstruct all funtion from @media to observable
+TODO: sticky footer, review star sign mobile, ajust cast list, reconstruct all funtion from @media to observable

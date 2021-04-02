@@ -21,6 +21,7 @@ import { CastComponent } from './components/cast/cast.component';
 import { PopoverComponent } from './components/popover/popover.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ReviewComponent } from './components/review/review.component';
+import { TypeaheadComponent } from './components/typeahead/typeahead.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ReviewComponent } from './components/review/review.component';
     PopoverComponent,
     ModalComponent,
     ReviewComponent,
+    TypeaheadComponent,
   ],
   imports: [
     BrowserModule,

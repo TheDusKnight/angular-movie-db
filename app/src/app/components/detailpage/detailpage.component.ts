@@ -178,9 +178,13 @@ export class DetailpageComponent implements OnInit {
           localStorage.setItem('orderList', JSON.stringify(orderList));
         }
       } else { // remove Least Recently Used item
-        const lastItem = orderList.pop();
         // TODO: remove cache or not?
         // localStorage.removeItem(lastItem);
+        if (orderList.includes(this.id)) {
+          orderList = orderList.filter(item => item !== this.id);
+        } else {
+          const lastItem = orderList.pop();
+        }
         orderList.unshift(this.id);
         localStorage.setItem("orderList", JSON.stringify(orderList));
         const store = {

@@ -72,8 +72,18 @@ Max 10 reviews
 
 Should the review header in the detail page be displayed as the following or should it be hidden when no reviews are available? **It should be hidden.**
 
-
-
-# @1292 We are not allow to use @media 2points penalty
-
 TODO: review star sign mobile, try to make card responsive!, auto close nabber
+
+Try vertically aligning cards to top.
+
+I get like below if size is smaller than 1376 px.
+
+---
+
+Desktop screen size has some range, suppose 700px to 1400px and mobile device has some other range, i.e. suppose 0px to 400px.
+
+Then different laptops have different screen size mentioned in the range. So when we test your application, our laptop screen size may vary, suppose one CP has 750px screen size and another has 1300px, so on both the sites, it must display perfectly fine.
+
+But when we switch from desktop screen range to mobile screen range, we will reload your page.
+
+Hope this clear all your doubts.

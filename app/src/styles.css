@@ -10,6 +10,8 @@ html,body{
   font-family: 'Raleway', sans-serif;
 }
 
+:focus {outline:0 !important;}
+
 ::ng-deep ngb-popover-window {
   position: absolute;
   width: auto !important;

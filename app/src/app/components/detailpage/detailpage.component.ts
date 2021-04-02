@@ -61,38 +61,42 @@ export class DetailpageComponent implements OnInit {
 
   ngOnInit(): void {
     // this.route.params.forEach(params => {
-    
+      
     // })
 
-    const routeParams = this.route.snapshot.paramMap;
-    // this.route.params.subscribe(params => {
-    //   console.log(params['id']);
-    // })
-    this.type = routeParams.get('type');
-    this.id = routeParams.get('id');
-    // console.log(this.id, this.type);
-    this.fetchDetail();
-    // this.storage(this.id, this.type, this.detail.name, this.detail.);
+    // const routeParams = this.route.snapshot.paramMap;
+    // this.type = routeParams.get('type');
+    // this.id = routeParams.get('id');
 
-    var watchList = localStorage.getItem('watchList') || [];
-    if (watchList.includes(this.id)) {
-      this.watchButton = "Remove from Watchlist";
-    } else {
-      this.watchButton = "Add to Watchlist";
-    }
+    this.route.params.subscribe(params => {
+      console.log(params['id']);
+      console.log(params['type']);
+      this.type = params['type'];
+      this.id = params['id'];
 
-    this._add.subscribe(message => this.addMessage = message);
-    this._add.pipe(debounceTime(5000)).subscribe(() => {
-      if (this.selfClosingAlert) {
-        this.selfClosingAlert.close();
+      this.fetchDetail();
+      // this.storage(this.id, this.type, this.detail.name, this.detail.);
+  
+      var watchList = localStorage.getItem('watchList') || [];
+      if (watchList.includes(this.id)) {
+        this.watchButton = "Remove from Watchlist";
+      } else {
+        this.watchButton = "Add to Watchlist";
       }
-    });
-    this._remove.subscribe(message => this.removeMessage = message);
-    this._remove.pipe(debounceTime(5000)).subscribe(() => {
-      if (this.selfClosingAlert) {
-        this.selfClosingAlert.close();
-      }
-    });
+  
+      this._add.subscribe(message => this.addMessage = message);
+      this._add.pipe(debounceTime(5000)).subscribe(() => {
+        if (this.selfClosingAlert) {
+          this.selfClosingAlert.close();
+        }
+      });
+      this._remove.subscribe(message => this.removeMessage = message);
+      this._remove.pipe(debounceTime(5000)).subscribe(() => {
+        if (this.selfClosingAlert) {
+          this.selfClosingAlert.close();
+        }
+      });
+    })
   }
 
   public addRemoveMessage() {

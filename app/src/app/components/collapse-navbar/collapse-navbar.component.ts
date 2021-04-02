@@ -31,7 +31,6 @@ export class CollapseNavbarComponent implements OnInit {
         document.getElementById("list").className = "nav-item"
         document.getElementById("home").className = "nav-item"
       }
-      // console.log(this.route)
     })
    }
 

@@ -1,6 +1,16 @@
-<ng-template #rt let-r="result" let-t="term">
-  <img [src]="r['backdrop_path']" class="mr-1" style="width: 120px; height:auto;">
-  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+<ng-template #rt let-r="result" let-t="term" style="background-color:dark;">
+  <div class="row align-left" style="font-size:1rem;">
+    <!-- <div class="col-3">
+      <img [src]="r['backdrop_path']" class="mr-1" style="width: 100px; height:auto;">
+    </div>
+    <div class="col-9">
+      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+    </div> -->
+    <div>
+      <img [src]="r['backdrop_path']" class="mr-1" style="width: 100px; height:auto; float: left;">
+      <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+    </div>
+  </div>
 </ng-template>
 
 <input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" placeholder="Search" [resultFormatter]="resultFormatBandListValue" [resultFormatter]="resultFormatBandListValue"/>

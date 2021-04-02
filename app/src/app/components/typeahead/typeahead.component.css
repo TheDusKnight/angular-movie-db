@@ -1,3 +1,10 @@
 .form-control {
+  color: white;
   width: 300px;
+  background-color: black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: white solid 1px;
 }
+

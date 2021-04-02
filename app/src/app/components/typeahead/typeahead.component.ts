@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
 // const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
 //   'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
@@ -22,10 +22,10 @@ export class SearchService {
       return of([]);
     }
 
-    return this.http.get(host + '/search/test/' + term)
-    // return this.http.get(host + '/search/multi/' + term).pipe(
-    //   map(response => response['name'])
-    // );
+    // return this.http.get(host + '/search/test/' + term)
+    return this.http.get(host + '/search/multi/' + term).pipe(
+      map(response => response['results'])
+    );
   }
 }
 

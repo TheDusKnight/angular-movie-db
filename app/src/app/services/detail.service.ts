@@ -8,6 +8,11 @@ export class DetailService {
 
   constructor(private http: HttpClient) { }
 
+  getSearch(name: string) {
+    let searchURL = this.host + '/search/multi/' + name;
+    return this.http.get(searchURL);
+  }
+
   getVideo(type: string, id: string) {
     let videoURL = this.host + type + '/video/' + id;
     return this.http.get(videoURL)

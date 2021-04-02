@@ -9,11 +9,6 @@ html,body{
   font-family: 'Raleway', sans-serif;
 }
 
-/* body::-webkit-scrollbar {
-  height: 1em;
-  width: 1em;
-} */
-
 ::ng-deep ngb-popover-window {
   position: absolute;
   width: auto !important;
@@ -43,21 +38,6 @@ html,body{
   background-color: darkgrey;
   border-radius: 10px;
 }
-
-/* If more than 600px */
-@media(min-width: 600px)
-{
-  html{
-    /* font-size:20px; */
-  }
-}
-/* @media(min-width: 960px)
-{
-  html{
-    font-size:1.4rem;
-  }
-} */
-
 
 .fa {
   color: #efefef;

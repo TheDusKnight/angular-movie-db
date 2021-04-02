@@ -61,4 +61,9 @@ export class TypeaheadComponent implements OnInit {
       return value.name
     return value;
   }
+
+  onSelect($event) {
+    $event.preventDefault();
+    this.model = null;
+  }
 }

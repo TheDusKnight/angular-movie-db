@@ -24,7 +24,7 @@
           <a target="_blank" *ngIf="castExternal.facebook_id" href="{{castExternal.facebook_id}}" class="fa fa-facebook fa-2x" ngbPopover="Visit Facebook" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
           <a target="_blank" *ngIf="castExternal.twitter_id" href="{{castExternal.twitter_id}}" class="fa fa-twitter fa-2x" ngbPopover="Visit Twitter" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
         </div>
-        <p><span style="font-size:2rem">Birography</span> <br>{{castDetail.biography}}</p>
+        <p *ngIf="castExternal.biography"><span style="font-size:2rem">Birography</span> <br>{{castDetail.biography}}</p>
       </div>
     </div>
   </div>

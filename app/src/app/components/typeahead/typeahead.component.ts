@@ -53,4 +53,12 @@ export class TypeaheadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  resultFormatBandListValue(value: any) {            
+    return value.name;
+  }
+  inputFormatBandListValue(value: any)   {
+    if(value.name)
+      return value.name
+    return value;
+  }
 }

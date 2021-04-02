@@ -22,6 +22,7 @@ export class DetailpageComponent implements OnInit {
   public escapeName: string;
   public escapeURL: string;
   public escapeKey: string;
+  // mySubscription: any;
   // public prefix:string = "https://www.youtube.com/watch?v="
 
   private _add = new Subject<string>();
@@ -38,16 +39,22 @@ export class DetailpageComponent implements OnInit {
     private route: ActivatedRoute,
     private detailService: DetailService,
     private router: Router
-  ) {
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {
-      return false;
-    }
+  ) { // reuse route logic
+    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
    }
+
+  // ngOnDestroy() {
+  //   if (this.mySubscription) {
+  //     this.mySubscription.unsubscribe();
+  //   }
+  // }
+  ngOnChanges() {
+  }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    // this.route.params.subscribe(e => {
-    //   console.log(this.route.snapshot.url)
+    // this.route.params.subscribe(params => {
+    //   console.log(params['id']);
     // })
     this.type = routeParams.get('type');
     this.id = routeParams.get('id');

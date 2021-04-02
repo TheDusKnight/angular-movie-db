@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   }
-  onActive() {
+  onActive(event) {
+    window.scroll(0,0);
     console.log("active");
   }
   onDeactive() {

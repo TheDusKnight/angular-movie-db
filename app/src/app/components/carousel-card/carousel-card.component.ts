@@ -16,7 +16,6 @@ export class CarouselCardComponent implements OnInit {
   public cards: any;
   public groupCards: any;
   public title: string;
-  // @Input() public data: any;
   @Input() public data: any = 'hello test';
 
   showNavigationArrows: boolean = true;
@@ -32,20 +31,13 @@ export class CarouselCardComponent implements OnInit {
     this.breakpointService.getBreakpoint().subscribe(result => {
       this.device = result;      
     });
-    // this.fetchCarousel();
-    // console.log(this.data);
   }
   ngOnChanges(changes: SimpleChanges): void { // service changes async
-    // console.log('NgOnChanges')
-    // console.log(this.data + '!!!!!!');
-    if (this.data) { // TODO: 为什么不能用changes['data']
-      // console.log(changes['data']);
+    if (this.data) { // changes['data']?
       this.cards = this.data;
-      // this.cards = changes['data'];
       var length = this.cards.length;
       if (length <= 6) {
         this.showNavigationArrows = false;
-        // this.showNavigationArrows = this.small ? true : false;
         this.showNavigationIndicators = false;
       } else {
         this.showNavigationArrows = true;

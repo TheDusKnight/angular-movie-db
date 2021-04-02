@@ -1,10 +1,5 @@
-<div>
+<div class="page-wrapper">
   <app-collapse-navbar></app-collapse-navbar>
-  <!-- <h1>{{title}}</h1> -->
-  <!-- <button type="button" class="btn btn-outline-secondary" ngbPopover="You see, I show up on hover!" triggers="mouseenter:mouseleave">
-    Hover over me!
-  </button> -->
-  <!-- <app-modal></app-modal> -->
   <router-outlet (activate)="onActive($event)" (deactivate)="onDeactive()"></router-outlet>
 </div>
 <app-footer></app-footer>

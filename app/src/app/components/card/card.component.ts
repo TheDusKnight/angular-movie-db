@@ -17,12 +17,8 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.breakpointService.getBreakpoint().subscribe(result => {
-    //   this.device = result;      
-    // });
   }
   ngOnChanges() {
-    // console.log(this.device + "in card");
   }
 
 }

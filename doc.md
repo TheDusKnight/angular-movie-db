@@ -76,4 +76,4 @@ Should the review header in the detail page be displayed as the following or sho
 
 # @1292 We are not allow to use @media 2points penalty
 
-TODO: sticky footer, review star sign mobile, try to make card responsive!, auto close nabber
+TODO: review star sign mobile, try to make card responsive!, auto close nabber

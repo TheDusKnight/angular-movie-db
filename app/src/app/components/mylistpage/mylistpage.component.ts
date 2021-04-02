@@ -15,7 +15,6 @@ export class MylistpageComponent implements OnInit {
   ngOnInit(): void {
     this.watchList = JSON.parse(localStorage.getItem('watchList')) || [];
     if (this.watchList.length > 0) {
-      // console.log(watchList.length)
       this.cards = []
       for (var i = 0; i < this.watchList.length; i++) {
         this.cards.push(JSON.parse(localStorage.getItem(this.watchList[i])))
@@ -23,8 +22,6 @@ export class MylistpageComponent implements OnInit {
     } else {
       this.watchList = null;
     }
-    // console.log(this.cards)
-    // console.log(this.watchList)
   }
 
 }

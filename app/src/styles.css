@@ -3,6 +3,7 @@ html,body{
   position: relative;
   /* min-height: 100%; */
   min-height: 100vh;
+  /* height: 100%; */
   color: white;
   background-color: rgba(6,12,46);
   /* font-size: 1rem; */

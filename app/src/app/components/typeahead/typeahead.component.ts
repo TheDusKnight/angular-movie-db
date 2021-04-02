@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { DetailService } from 'src/app/services/detail.service';
+import { HttpClient } from '@angular/common/http';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
 // const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
 //   'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
@@ -12,25 +12,45 @@ import { DetailService } from 'src/app/services/detail.service';
 //   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
 //   'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
+const host = 'http://localhost:8080'; // TODO: change to real host
+@Injectable()
+export class SearchService {
+  constructor(private http: HttpClient) {}
+
+  search(term: string) {
+    if (term === '') {
+      return of([]);
+    }
+
+    // return this.http.get(host + '/search/multi/' + term).pipe(
+    //   map(response => response['id'])
+    // );
+    return this.http.get(host + '/search/multi/' + term).pipe(
+      map(response => response['results']['id'])
+    );
+  }
+}
+
 @Component({
   selector: 'app-typeahead',
   templateUrl: './typeahead.component.html',
+  providers: [SearchService],
   styleUrls: ['./typeahead.component.css']
 })
 export class TypeaheadComponent implements OnInit {
-
-  public model: any;
+  model: any;
   searching = false;
   searchFailed = false;
 
-  search = (text$: Observable<string>) =>
-    text$.pipe(
+  constructor(private _service: SearchService) { }
+
+  search = (text$: Observable<string>) => {
+    return text$.pipe(
       debounceTime(200),
       distinctUntilChanged(),
-      switchMap((searchText) => this.detailService.getSearch(searchText))
+      switchMap((searchText) => this._service.search(searchText)),
     );
-
-  constructor(private detailService: DetailService) { }
+  }
 
   ngOnInit(): void {
   }

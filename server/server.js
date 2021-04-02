@@ -222,6 +222,32 @@ function getCastExternal(url, res) {
 app.get('/', (req, res) => {
   res.status(200).send('Hello, papa').end();
 });
+app.get('/search/test/:movie', (req, res) => {
+  const { movie } = req.params;
+  // console.log(escape(movie));
+  const url = `https://api.themoviedb.org/3/search/multi?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&page=1&query=${escape(movie)}`;
+  axios.get(url).then((response) => {
+    const o = [];
+    // console.log(response.data.results);
+    // at most 7, remove if backdrop_path not exist or null, remove if it is not tv or movie type
+    response.data.results.forEach((result) => {
+      if (result.backdrop_path != null && (result.media_type === 'movie' || result.media_type === 'tv')) {
+        const data = {
+          id: result.id || null,
+          name: result.name || result.title || null,
+          backdrop_path: `https://image.tmdb.org/t/p/w500${result.backdrop_path}`,
+          media_type: result.media_type,
+        };
+        o.push(data);
+      } else {
+        console.log(`${result.id} invalid search multi`);
+      }
+    });
+    res.json(o);
+  }).catch((error) => {
+    console.log(error);
+  });
+});
 app.get('/search/multi/:movie', (req, res) => {
   const { movie } = req.params;
   // console.log(escape(movie));

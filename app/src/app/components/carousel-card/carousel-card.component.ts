@@ -38,7 +38,12 @@ export class CarouselCardComponent implements OnInit {
     //     this.small = false;
     //   }
     // })
-    this.breakpointService.getBreakpoint().subscribe(result => this.device = result);
+    this.breakpointService.getBreakpoint().subscribe(result => {
+      this.device = result;
+      if (this.device === "XSmall") {
+        // $("p").css({"background-color": "yellow", "font-size": "200%"});
+      }
+    });
     // this.fetchCarousel();
     // console.log(this.data);
   }

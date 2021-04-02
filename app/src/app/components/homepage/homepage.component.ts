@@ -26,7 +26,7 @@ export class HomepageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log(localStorage)
+    // console.log(localStorage)
     // this.breakpoint.currentMessage.subscribe(breakpoint => this.device = breakpoint);
     // getContinueWatch();
     // this.continueWatch = [];

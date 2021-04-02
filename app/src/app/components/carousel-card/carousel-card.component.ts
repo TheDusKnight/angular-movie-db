@@ -37,9 +37,9 @@ export class CarouselCardComponent implements OnInit {
   }
   ngOnChanges(changes: SimpleChanges): void { // service changes async
     // console.log('NgOnChanges')
-    console.log(this.data + '!!!!!!');
+    // console.log(this.data + '!!!!!!');
     if (this.data) { // TODO: 为什么不能用changes['data']
-      console.log(changes['data']);
+      // console.log(changes['data']);
       this.cards = this.data;
       // this.cards = changes['data'];
       var length = this.cards.length;

@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
     // });
   }
   ngOnChanges() {
-    console.log(this.device + "in card");
+    // console.log(this.device + "in card");
   }
 
 }

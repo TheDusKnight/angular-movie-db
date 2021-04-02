@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Injectable, Input, OnInit, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
@@ -31,6 +31,10 @@ export class TypeaheadComponent implements OnInit {
   searching = false;
   searchFailed = false;
   @Input() isMenuCollapsed:boolean;
+  @Output() onHide = new EventEmitter<boolean>();
+  setHide(){
+      this.onHide.emit(false);
+  }
 
   constructor(private _service: SearchService) { }
 

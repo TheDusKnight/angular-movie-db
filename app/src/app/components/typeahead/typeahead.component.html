@@ -11,5 +11,5 @@
 <div style="background-color: rgba(6,12,46);">
   <input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search"
     [resultTemplate]="rt" placeholder="Search" [inputFormatter]="inputFormatBandListValue"
-    [resultFormatter]="resultFormatBandListValue" (selectItem)="onSelect($event)"/>
+    [resultFormatter]="resultFormatBandListValue" (selectItem)="onSelect($event)" (click)="setHide()"/>
 </div>

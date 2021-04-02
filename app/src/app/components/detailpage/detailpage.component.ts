@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -37,10 +37,18 @@ export class DetailpageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private detailService: DetailService,
-  ) { }
+    private router: Router
+  ) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+      return false;
+    }
+   }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
+    // this.route.params.subscribe(e => {
+    //   console.log(this.route.snapshot.url)
+    // })
     this.type = routeParams.get('type');
     this.id = routeParams.get('id');
     // console.log(this.id, this.type);

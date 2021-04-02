@@ -12,4 +12,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   }
+  onActive() {
+    console.log("active");
+  }
+  onDeactive() {
+    console.log("deactive");
+  }
 }

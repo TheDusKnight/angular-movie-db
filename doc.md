@@ -74,6 +74,6 @@ Should the review header in the detail page be displayed as the following or sho
 
 
 
-# @1292 We are not allow to use @media????? 
+# @1292 We are not allow to use @media 2points penalty
 
-TODO: footer, search, 
+TODO: footer, search & search style, ajust cast list, update detail page without refreshing, reconstruct all funtion from @media to observable

@@ -1,16 +1,14 @@
-<!-- <p>carousel-card works!</p> -->
-<!-- {{data}} -->
-<ngb-carousel *ngIf="device === 'XSmall'" [interval]="false" [showNavigationArrows]="true" [showNavigationIndicators]="false">
+<ngb-carousel id="single" *ngIf="device === 'XSmall'" [interval]="false" [showNavigationArrows]="true" [showNavigationIndicators]="false">
   <ng-template ngbSlide *ngFor="let card of cards">
-        <app-card [cardInfo]="card"></app-card>
+        <app-card [cardInfo]="card" [device]="device"></app-card>
   </ng-template>
 </ngb-carousel>
 
-<ngb-carousel *ngIf="device !== 'XSmall'" [interval]="false" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+<ngb-carousel id="multi" *ngIf="device !== 'XSmall'" [interval]="false" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
   <ng-template ngbSlide *ngFor="let groupCard of groupCards">
     <div class="card-group">
       <div class="col-2" *ngFor="let card of groupCard">
-        <app-card [cardInfo]="card"></app-card>
+        <app-card [cardInfo]="card" [device]="device"></app-card>
       </div>
     </div>
   </ng-template>

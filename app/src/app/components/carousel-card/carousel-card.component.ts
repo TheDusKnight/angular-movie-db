@@ -29,28 +29,17 @@ export class CarouselCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.breakpointObserver.observe([
-    //   Breakpoints.XSmall,
-    // ]).subscribe((state: BreakpointState) => {
-    //   if (state.matches) {
-    //     this.small = true;
-    //   } else {
-    //     this.small = false;
-    //   }
-    // })
     this.breakpointService.getBreakpoint().subscribe(result => {
-      this.device = result;
-      if (this.device === "XSmall") {
-        // $("p").css({"background-color": "yellow", "font-size": "200%"});
-      }
+      this.device = result;      
     });
     // this.fetchCarousel();
     // console.log(this.data);
   }
   ngOnChanges(changes: SimpleChanges): void { // service changes async
-    // console.log(this.data + '!!!!!!');
+    // console.log('NgOnChanges')
+    console.log(this.data + '!!!!!!');
     if (this.data) { // TODO: 为什么不能用changes['data']
-      // console.log(changes['data']);
+      console.log(changes['data']);
       this.cards = this.data;
       // this.cards = changes['data'];
       var length = this.cards.length;

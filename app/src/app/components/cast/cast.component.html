@@ -18,7 +18,7 @@
           <p style="margin-bottom:0px;">Gender: {{castDetail.gender}}</p>
           <p *ngIf="castDetail.homepage" style="margin-bottom:0px;">Website:  <a  href="{{castDetail.homepage}}" style="margin-bottom:0px;" target="_blank">{{castDetail.homepage}}</a></p>
           <p *ngIf="castDetail.known_for_department" style="margin-bottom:0px;">Known for: {{castDetail.known_for_department}}</p>
-          <p *ngIf="castDetail.also_known_as.length > 0" style="margin-bottom:0px;">Also Known for: {{castDetail.also_known_as}}</p>
+          <p *ngIf="castDetail.also_known_as && castDetail.also_known_as.length > 0" style="margin-bottom:0px;">Also Known for: {{castDetail.also_known_as}}</p>
           <a target="_blank" *ngIf="castExternal.imdb_id" href="{{castExternal.imdb_id}}" class="fa fa-imdb fa-2x" ngbPopover="Visit TMDB" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
           <a target="_blank" *ngIf="castExternal.instagram_id" href="{{castExternal.instagram_id}}" class="fa fa-instagram fa-2x" ngbPopover="Visit Instagram" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>
           <a target="_blank" *ngIf="castExternal.facebook_id" href="{{castExternal.facebook_id}}" class="fa fa-facebook fa-2x" ngbPopover="Visit Facebook" triggers="mouseenter:mouseleave" style="text-decoration: none;margin: 3px 3px 3px 3px;"></a>

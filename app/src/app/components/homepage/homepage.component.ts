@@ -11,7 +11,6 @@ export class HomepageComponent implements OnInit {
 
   public message: string = "Passing the message from homepage";
   public device: string; // display device size
-  // public continueWatch = <any> [];
   public continueWatch: any;
   public popMovie: any;
   public topMovie: any;
@@ -26,11 +25,6 @@ export class HomepageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // console.log(localStorage)
-    // this.breakpoint.currentMessage.subscribe(breakpoint => this.device = breakpoint);
-    // getContinueWatch();
-    // this.continueWatch = [];
-
     // Fetch continue watch list from local storage
     this.continueWatch = [];
     var orderList = JSON.parse(localStorage.getItem('orderList')) || [];
@@ -43,8 +37,6 @@ export class HomepageComponent implements OnInit {
     } else {
       this.continueWatch = null;
     }
-    // console.log(this.continueWatch);
-
     this.breakpointService.getBreakpoint().subscribe(result => this.device = result);
     this.carouselService.getPopMovie().subscribe(result => this.popMovie = result['results']);
     this.carouselService.getTopMovie().subscribe(result => this.topMovie = result['results']);
@@ -52,20 +44,9 @@ export class HomepageComponent implements OnInit {
     this.carouselService.getPopTv().subscribe(result => this.popTv = result['results']);
     this.carouselService.getTopTv().subscribe(result => this.topTv = result['results']);
     this.carouselService.getTrendTv().subscribe(result => this.trendTv = result['results']);
-
   }
-
 }
 
 function getContinueWatch() {
   this.continueWatch = [];
-  // var orderList = JSON.parse(localStorage.getItem('orderList')) || [];
-  // if (orderList.length > 0) {
-  //   for (let x in orderList) {
-  //     this.continueWatch = [];
-  //     this.continueWatch.push(localStorage.getItem(x));
-  //   }
-  // } else {
-  //   this.continueWatch = null;
-  // }
 }

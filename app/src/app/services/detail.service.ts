@@ -4,45 +4,46 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DetailService {
-  host = 'http://localhost:8080/';
+  rootURL = 'http://127.0.0.1:8080';
+  // rootURL = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 
   getSearch(name: string) {
-    let searchURL = this.host + '/search/multi/' + name;
+    let searchURL = this.rootURL + '/search/multi/' + name;
     return this.http.get(searchURL);
   }
 
   getVideo(type: string, id: string) {
-    let videoURL = this.host + type + '/video/' + id;
+    let videoURL = this.rootURL + type + '/video/' + id;
     return this.http.get(videoURL)
   }
   getDetail(type: string, id: string) {
-    let detailURL = this.host + type + '/detail/' + id;
+    let detailURL = this.rootURL + type + '/detail/' + id;
     return this.http.get(detailURL)
   }
   getReview(type: string, id: string) {
-    let reviewURL = this.host + type + '/review/' + id;
+    let reviewURL = this.rootURL + type + '/review/' + id;
     return this.http.get(reviewURL)
   }
   getCast(type: string, id: string) {
-    let castURL = this.host + type + '/cast/' + id;
+    let castURL = this.rootURL + type + '/cast/' + id;
     return this.http.get(castURL)
   }
   getCastDetail(id: string) {
-    let castDetailURL = this.host + 'cast/detail/' + id;
+    let castDetailURL = this.rootURL + 'cast/detail/' + id;
     return this.http.get(castDetailURL)
   }
   getCastExternal(id: string) {
-    let castExternalURL = this.host + 'cast/external/' + id;
+    let castExternalURL = this.rootURL + 'cast/external/' + id;
     return this.http.get(castExternalURL)
   }
   getRecommend(type: string, id: string) {
-    let RecommendURL = this.host + 'recommend/' + type + '/'+ id;
+    let RecommendURL = this.rootURL + 'recommend/' + type + '/'+ id;
     return this.http.get(RecommendURL)
   }
   getSimilar(type: string, id: string) {
-    let SimilarURL = this.host + 'similar/' + type + '/' + id;
+    let SimilarURL = this.rootURL + 'similar/' + type + '/' + id;
     return this.http.get(SimilarURL)
   }
 }

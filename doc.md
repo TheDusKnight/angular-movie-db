@@ -92,8 +92,6 @@ review star sign mobile, try to make card responsive!
 
 auto close nabber
 
-star review
-
 cast height
 
 I get like below if size is smaller than 1376 px.

@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DetailService {
-  // rootURL = 'http://127.0.0.1:8080';
-  rootURL = "http://localhost:8080";
+  rootURL = 'https://trevor-imdb-framework.wm.r.appspot.com/';
+  // rootURL = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 

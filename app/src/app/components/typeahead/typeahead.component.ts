@@ -3,7 +3,7 @@ import { Component, EventEmitter, Injectable, Input, OnInit, Output } from '@ang
 import { Observable, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
-const host = 'http://localhost:8080'; // TODO: change to real host
+const host = 'https://trevor-imdb-framework.wm.r.appspot.com/';
 @Injectable()
 export class SearchService {
   constructor(private http: HttpClient) {}

@@ -49,7 +49,7 @@ function getVideo(url, res) {
           name: result.name || null,
           key: result.key || null,
         };
-        if (o[key].length < 20) { // TODO: keep only 1 video?
+        if (o[key].length < 20) {
           o[key].push(data);
         }
       } else {
@@ -77,11 +77,11 @@ function getDetail(url, res) {
     o[key] = [];
     const result = response.data;
     const genre = [];
-    result.genres.forEach((g) => { // TODO: check is genre is undefined
+    result.genres.forEach((g) => {
       genre.push(g.name);
     });
     const language = [];
-    result.spoken_languages.forEach((l) => { // TODO: check language is undefined
+    result.spoken_languages.forEach((l) => {
       language.push(l.name);
     });
     const data = {
@@ -89,7 +89,7 @@ function getDetail(url, res) {
       genres: genre,
       spoken_languages: language,
       // eslint-disable-next-line max-len
-      release_date: result.release_date || result.first_air_date || null, // TODO: check list or null
+      release_date: result.release_date || result.first_air_date || null,
       // check list or null
       runtime: result.runtime || (result.episode_run_time ? result.episode_run_time[0] : null),
       overview: result.overview || null,

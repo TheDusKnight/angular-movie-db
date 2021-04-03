@@ -86,8 +86,6 @@ Hope this clear all your doubts.
 
 
 
-TODO: 
-
 review star sign mobile, try to make card responsive!
 
 I get like below if size is smaller than 1376 px.

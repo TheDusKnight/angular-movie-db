@@ -85,7 +85,6 @@ Full Cast & Crew Mobile Behavior
   <div class="my-img">
     <img class="card-img-top" src="{{cast.profile_path}}" alt="Card image cap">
   </div>
-  <!-- TODO: fix img height issue -->
   <!-- <div class="card-body"> -->
   <p class="card-text" style="font-size:0.9rem; color:black;">
     <span style="font-weight:bolder">{{cast.name}}</span>

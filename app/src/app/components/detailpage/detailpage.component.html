@@ -1,13 +1,5 @@
-<!-- <p>detailpage works!</p>
-{{id}}<br>
-{{type}}
-{{video.key}}
-{{detail.name}} -->
-<!-- {{reviews}} -->
-
 <div class="container">
   <div class="row">
-    <!-- TODO: improve text display -->
     <div class="col-lg-8">
       <div class="embed-responsive embed-responsive-16by9">
         <youtube-player videoId={{video.key}}> </youtube-player>
@@ -93,11 +85,13 @@
   </div>
 
   <div *ngIf="recommendations.length > 0">
-    <h2 class="pl-5 pl-md-0 mt-5">Recommended Movies</h2>
+    <h2 *ngIf="type === 'movie'" class="pl-5 pl-md-0 mt-5">Recommended Movies</h2>
+    <h2 *ngIf="type === 'tv'" class="pl-5 pl-md-0 mt-5">Recommended Tvs</h2>
     <app-carousel-card [data]='recommendations'></app-carousel-card>
   </div>
   <div *ngIf="similars.length > 0">
-    <h2 class="pl-5 pl-md-0 m5-3">Similar Movies</h2>
+    <h2 *ngIf="type === 'movie'" class="pl-5 pl-md-0 m5-3">Similar Movies</h2>
+    <h2 *ngIf="type === 'tv'" class="pl-5 pl-md-0 m5-3">Similar Tvs</h2>
     <app-carousel-card [data]='similars'></app-carousel-card>
   </div>
 

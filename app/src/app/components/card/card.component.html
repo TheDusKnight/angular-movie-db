@@ -1,9 +1,7 @@
 <div *ngIf="device === 'XSmall'" class="card" id="small-card">
   <a [routerLink]="['/watch/', cardInfo.media_type, cardInfo.id]">
     <div class="my-div" id="small" title={{cardInfo.name}}>
-      <div class="card">
         <img class="card-img-top center-block" src="{{cardInfo.poster_path}}" alt="Card image cap">
-      </div>
     </div>
   </a>
 </div>

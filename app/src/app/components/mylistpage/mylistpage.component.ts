@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointService } from 'src/app/services/breakpoint.service';
 
 @Component({
   selector: 'app-mylistpage',
@@ -8,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class MylistpageComponent implements OnInit {
   public watchList: any;
   public cards: any;
+  public device: string;
 
   constructor(
+    private breakpointService: BreakpointService,
   ) { }
 
   ngOnInit(): void {
+    this.breakpointService.getBreakpoint().subscribe(result => {
+      this.device = result;
+    });
+
     this.watchList = JSON.parse(localStorage.getItem('watchList')) || [];
     if (this.watchList.length > 0) {
       this.cards = []
@@ -23,5 +30,4 @@ export class MylistpageComponent implements OnInit {
       this.watchList = null;
     }
   }
-
 }

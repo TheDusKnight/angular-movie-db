@@ -29,7 +29,7 @@ export class CarouselCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakpointService.getBreakpoint().subscribe(result => {
-      this.device = result;      
+      this.device = result;
     });
   }
   ngOnChanges(changes: SimpleChanges): void { // service changes async

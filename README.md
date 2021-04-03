@@ -1,99 +1,80 @@
- [doc.md](doc.md) 
+<img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
 
-key: `788c93d7dc54e946665b5958c8ff0a3a`
+# Google Cloud Platform Node.js Samples [![Slack][slack_badge]][slack_link]
 
-cd server
+Node.js samples for [Google Cloud Platform products][cloud].
 
-npx nodemon server.js
+See [cloud.google.com/nodejs][cloud_nodejs] to get up and running with Node.js
+on Google Cloud Platform.
 
-cd app
-
-npm start
-
-
-
-Use axis with express: @923
-
-``` javascript
-url = 'https://api.themoviedb.org/3/search/multi?api_key=788c93d7dc54e946665b5958c8ff0a3a&language=en-US&query=game';
-
-// GET method route
-
-app.get('/', function(req, res) {
-
- axios.get(url)
-
- .then(response => {
-
- // console.log(response)
-
- res.json(response.data);
-
- })
-
- .catch(error => {
-
- console.log(error)
-
- })
-
-})
-```
-
-for 4.1.5, 4.1.3, 4.1.2, 4.1.14, etc..., ignore movies that don't have backdrop_path
-
-## Continue Watching
-
-Continue Watching and watchlist peresist
-
-consider the continue watching, stored in localStorage, as an LRU. Always place the most recently watched at the first element and **set an upper bound to the total number to 24**. Remove the least recently viewed ones at the end of list
-
-if the movie/tv show is already in the continue watching section, it's been placed in the **first place** (start of the carousel).
-
-The position will be updated and it should not occur at the old position anymore.
-
-@1002How to modify css of ngb-corousel? Hint: look for ng-deep
+[slack_badge]: https://img.shields.io/badge/slack-Google%20Cloud%20Platform-E01563.svg	
+[slack_link]: https://googlecloud-community.slack.com/
+[cloud]: https://cloud.google.com/
+[cloud_nodejs]: https://cloud.google.com/nodejs/
 
 
+## Setup
 
-# Popover
+### Prerequisites
 
-please use a ngbPopOver for creating the external ids of cast members. 
+1. Install [Node.js version 10 or greater][node]
+1. Clone this repository:
 
+        git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git
 
+1. Obtain authentication credentials.
 
-# Cast list
+    Create local credentials by running the following command and following the
+    oauth2 flow (read more about the command [here][auth_command]):
 
-display just the cast list, full cast list
+        gcloud auth application-default login
 
-
-
-cast height problemhttps://piazza.com/class/kk3y4me0cu05v7?cid=1330 
-
-- try to set a default height for the card.
-
-Full Cast & Crew Mobile Behavior
-
-- There is a horizontal scrollbar used for this and this is how the cards are sliding from left to right. 
-
-# [Horizontally scrollable list of cards in Bootstrap](https://stackoverflow.com/questions/35993300/horizontally-scrollable-list-of-cards-in-bootstrap)
+    Read more about [Google Cloud Platform Authentication][gcp_auth].
 
 
+[node]: https://nodejs.org/
+[auth_command]: https://cloud.google.com/sdk/gcloud/reference/beta/auth/application-default/login
+[gcp_auth]: https://cloud.google.com/docs/authentication#projects_and_resources
 
-``` typescript
-<div class="card text-center">
-  <div class="my-img">
-    <img class="card-img-top" src="{{cast.profile_path}}" alt="Card image cap">
-  </div>
-  <!-- <div class="card-body"> -->
-  <p class="card-text" style="font-size:0.9rem; color:black;">
-    <span style="font-weight:bolder">{{cast.name}}</span>
-    <br>
-    <span style="font-weight:bolder">AS</span>
-    <br>
-    {{cast.character}}
-  </p>
-  <!-- </div> -->
-</div>
-```
+### How to run a sample
 
+1. Change directory to one of the sample folders, e.g. `datastore`:
+
+        cd datastore/
+
+1. Install the sample's dependencies (see the sample's README for details):
+
+        npm install
+
+1. Run the sample:
+
+        node sample_file.js [args]...
+
+## Other sample applications
+
+### Bookshelf tutorial app
+
+The [Bookshelf app][bookshelf_docs] is a sample web app written in Node.js that
+shows you how to use a variety of Google Cloud Platform features.
+
+View the [tutorial][bookshelf_docs] or the [source code][bookshelf_code].
+
+[bookshelf_docs]: https://cloud.google.com/nodejs/getting-started/tutorial-app
+[bookshelf_code]: https://github.com/GoogleCloudPlatform/nodejs-getting-started
+
+### Node.js Codelab
+
+In the [Node.js Web App Google Cloud Platform][codelab_docs] codelab, you learn
+how to integrate Google Cloud Platform services into a Node.js web application
+to store data, upload images, and authenticate users.
+
+View the [tutorial][codelab_docs] or the [source code][codelab_code].
+
+[codelab_docs]: https://gcplab.me/codelabs/cloud-nodejs/index.html
+[codelab_code]: https://github.com/googlecodelabs/cloud-nodejs
+
+## Contributing
+
+Contributions welcome! See the [Contributing Guide][contrib].
+
+[contrib]: CONTRIBUTING.md

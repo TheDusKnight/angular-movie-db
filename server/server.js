@@ -8,7 +8,7 @@ const axios = require('axios').default;
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.static(path.join(__dirname, 'dist/app')));
 function noQuery(url, res, type) {
   axios.get(url).then((response) => {
     const o = {};
@@ -220,7 +220,8 @@ function getCastExternal(url, res) {
   });
 }
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, papa').end();
+  res.sendFile(path.join(__dirname, 'dist/app/index.html'));
+  // res.status(200).send('Hello, papa').end();
 });
 app.get('/search/multi/:movie', (req, res) => {
   const { movie } = req.params;

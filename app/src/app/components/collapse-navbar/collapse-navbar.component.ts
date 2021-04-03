@@ -39,6 +39,5 @@ export class CollapseNavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
 

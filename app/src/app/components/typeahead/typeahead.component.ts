@@ -33,7 +33,7 @@ export class TypeaheadComponent implements OnInit {
   @Input() isMenuCollapsed:boolean;
   @Output() onHide = new EventEmitter<boolean>();
   setHide(){
-      this.onHide.emit(false);
+      this.onHide.emit(true);
   }
 
   constructor(private _service: SearchService) { }

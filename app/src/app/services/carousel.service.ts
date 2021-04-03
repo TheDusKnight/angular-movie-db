@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class CarouselService {
   data = {}
-  rootURL = 'http://127.0.0.1:8080';
-  // rootURL = "http://localhost:8080";
+  // rootURL = 'http://127.0.0.1:8080';
+  rootURL = "http://localhost:8080";
   getCurrentPlaying() {
     let currentPlayingURL = this.rootURL + '/current/movie';
     // let currentPlayingURL = 'http://127.0.0.1:8080/current/movie';

@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
   onActive(event) {
     window.scroll(0,0);
-    console.log("active");
+    // console.log("active");
   }
   onDeactive() {
     // console.log("deactive");

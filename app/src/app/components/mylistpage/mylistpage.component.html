@@ -4,7 +4,7 @@
     <h1 class="pt-5">My Watchlist</h1>
   </div>
   <div *ngIf="watchList" class="card-deck">
-    <div class="col-2" *ngFor="let card of cards">
+    <div class="col-md-2 col-sm-12" *ngFor="let card of cards">
       <div class="mt-5">
         <app-card [cardInfo]="card" ></app-card>
       </div>

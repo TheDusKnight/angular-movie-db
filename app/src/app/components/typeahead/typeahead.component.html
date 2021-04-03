@@ -1,6 +1,6 @@
 <ng-template #rt let-r="result" let-t="term" style="">
   <div class="row align-left" style="font-size:1rem;">
-    <a [routerLink]="['/watch/', r.media_type, r.id]">
+    <a [routerLink]="['/watch/', r.media_type, r.id]" (click)="setHide()">
       <div>
         <img [src]="r['backdrop_path']" class="mr-1" style="width: 100px; height:auto; float: left;">
         <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
@@ -11,5 +11,5 @@
 <div style="background-color: rgba(6,12,46);">
   <input id="typeahead" type="text" class="form-control mx-sm-3" [(ngModel)]="model" [ngbTypeahead]="search"
     [resultTemplate]="rt" placeholder="Search" [inputFormatter]="inputFormatBandListValue"
-    [resultFormatter]="resultFormatBandListValue" (selectItem)="onSelect($event)" (click)="setHide()"/>
+    [resultFormatter]="resultFormatBandListValue" (selectItem)="onSelect($event)" />
 </div>

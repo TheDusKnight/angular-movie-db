@@ -66,7 +66,7 @@ Image Overlay Slide https://www.w3schools.com/howto/howto_css_image_overlay_slid
 
 [Ask Question](https://stackoverflow.com/questions/ask)
 
-# Reviews 
+# Reviews
 
 Max 10 reviews
 

@@ -22,8 +22,6 @@ export class DetailpageComponent implements OnInit {
   public escapeName: string;
   public escapeURL: string;
   public escapeKey: string;
-  // mySubscription: any;
-  // public prefix:string = "https://www.youtube.com/watch?v="
 
   private _add = new Subject<string>();
   private _remove = new Subject<string>();
@@ -33,49 +31,24 @@ export class DetailpageComponent implements OnInit {
   addMessage = '';
   removeMessage = '';
   @ViewChild('selfClosingAlert', { static: false })
-  selfClosingAlert: NgbAlert; // any?
+  selfClosingAlert: NgbAlert;
 
   constructor(
     private route: ActivatedRoute,
     private detailService: DetailService,
     private router: Router
-  ) { // reuse route logic
-    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    
-   }
-
-  // ngOnDestroy() {
-  //   if (this.mySubscription) {
-  //     this.mySubscription.unsubscribe();
-  //   }
-  // }
-
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-  //   //Add '${implements OnChanges}' to the class.
-  //   // this.route.params.subscribe(params => {
-  //   //   console.log(params['id']);
-  //   // })
-    
-  // }
+  ) { }
 
   ngOnInit(): void {
-    // this.route.params.forEach(params => {
-      
-    // })
-
-    // const routeParams = this.route.snapshot.paramMap;
-    // this.type = routeParams.get('type');
-    // this.id = routeParams.get('id');
-
     this.route.params.subscribe(params => {
+      window.scroll(0,0);
+
       console.log(params['id']);
       console.log(params['type']);
       this.type = params['type'];
       this.id = params['id'];
 
       this.fetchDetail();
-      // this.storage(this.id, this.type, this.detail.name, this.detail.);
   
       var watchList = localStorage.getItem('watchList') || [];
       if (watchList.includes(this.id)) {
@@ -116,7 +89,7 @@ export class DetailpageComponent implements OnInit {
       this._add.next(`Added to watchList`);
       watchList.unshift(this.id);
       localStorage.setItem("watchList", JSON.stringify(watchList));
-      // TODO: store cache or not?
+      // store cache or not?
     }
   }
 
@@ -160,7 +133,6 @@ export class DetailpageComponent implements OnInit {
       // store in local storage
       var orderList = JSON.parse(localStorage.getItem("orderList")) || [];
       if (orderList.length < 24) {
-        // if (localStorage.getItem(this.id) === null) {
         if (!orderList.includes(this.id)) {
           orderList.unshift(this.id); // add to last
           const store = {
@@ -178,7 +150,7 @@ export class DetailpageComponent implements OnInit {
           localStorage.setItem('orderList', JSON.stringify(orderList));
         }
       } else { // remove Least Recently Used item
-        // TODO: remove cache or not?
+        // remove cache or not?
         // localStorage.removeItem(lastItem);
         if (orderList.includes(this.id)) {
           orderList = orderList.filter(item => item !== this.id);
@@ -195,7 +167,6 @@ export class DetailpageComponent implements OnInit {
         }
         localStorage.setItem(this.id, JSON.stringify(store));
       }
-      // console.log(localStorage);
     })
   }
 }

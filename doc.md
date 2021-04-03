@@ -86,10 +86,17 @@ Hope this clear all your doubts.
 
 
 
-TODO: review star sign mobile, try to make card responsive!, auto close nabber
+TODO: 
 
-Try vertically aligning cards to top.
+review star sign mobile, try to make card responsive!
+
+auto close nabber
+
+star review
+
+cast height
 
 I get like below if size is smaller than 1376 px.
 
-change recommended movis to tv if tv
+- Try vertically aligning cards to top.
+

@@ -17,6 +17,6 @@ export class AppComponent implements OnInit {
     console.log("active");
   }
   onDeactive() {
-    console.log("deactive");
+    // console.log("deactive");
   }
 }

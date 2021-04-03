@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlertSelfclosingComponent } from './components/alert-selfclosing/alert-selfclosing.component';
-import { BreakpointComponent } from './components/breakpoint/breakpoint.component';
 import { CardComponent } from './components/card/card.component';
 import { CarouselCardComponent } from './components/carousel-card/carousel-card.component';
 import { CarouselPauseComponent } from './components/carousel-pause/carousel-pause.component';
@@ -30,7 +29,6 @@ import { TypeaheadComponent } from './components/typeahead/typeahead.component';
     HomepageComponent,
     MylistpageComponent,
     DetailpageComponent,
-    BreakpointComponent,
     CardComponent,
     CarouselCardComponent,
     FooterComponent,

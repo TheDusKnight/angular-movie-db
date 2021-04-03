@@ -43,8 +43,8 @@ export class DetailpageComponent implements OnInit {
     this.route.params.subscribe(params => {
       window.scroll(0,0);
 
-      console.log(params['id']);
-      console.log(params['type']);
+      // console.log(params['id']);
+      // console.log(params['type']);
       this.type = params['type'];
       this.id = params['id'];
 
